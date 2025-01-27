@@ -11,6 +11,7 @@ import at.petrak.hexcasting.xplat.IXplatAbstractions
 import miyucomics.overevaluate.handlers.NephthysSpecialHandler
 import miyucomics.overevaluate.handlers.SekhmetSpecialHandler
 import miyucomics.overevaluate.patterns.*
+import miyucomics.overevaluate.patterns.blackbox.OpBlackboxCreate
 import miyucomics.overevaluate.patterns.metaevals.*
 import miyucomics.overevaluate.patterns.soroban.OpSorobanDecrement
 import miyucomics.overevaluate.patterns.soroban.OpSorobanIncrement
@@ -23,6 +24,8 @@ object OverevaluatePatterns {
 		register("swap_one_three", "ddwqaq", HexDir.NORTH_EAST, OpTwiddling(3, intArrayOf(2, 1, 0)))
 		register("swap_two_three", "aawede", HexDir.EAST, OpTwiddling(3, intArrayOf(1, 0, 2)))
 		register("dup_many", "waadadaa", HexDir.EAST, OpDupMany())
+
+		register("blackbox_create", "wddwdwddw", HexDir.SOUTH_EAST, OpBlackboxCreate())
 
 		register("soroban_decrement", "waqdee", HexDir.SOUTH_EAST, OpSorobanDecrement())
 		register("soroban_increment", "wdeaqq", HexDir.NORTH_EAST, OpSorobanIncrement())
