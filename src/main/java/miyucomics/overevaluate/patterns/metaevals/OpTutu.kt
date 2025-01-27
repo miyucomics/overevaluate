@@ -9,5 +9,5 @@ import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
 
 object OpTutu : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation) =
-		OperationResult(image.withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
+		OperationResult(image, listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 }
