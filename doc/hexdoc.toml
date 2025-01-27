@@ -1,0 +1,37 @@
+modid = "overevaluate"
+book = "hexcasting:thehexbook"
+default_lang = "en_us"
+default_branch = "main"
+
+resource_dirs = [
+    "resources",
+    "{_common.src}/main/resources",
+    { modid="hexcasting" },
+    { modid="minecraft" },
+    { modid="hexdoc" },
+]
+export_dir = "src/hexdoc_overevaluate/_export/generated"
+
+[template]
+icon = "icon.png"
+include = [
+    "overevaluate",
+    "hexcasting",
+    "hexdoc",
+]
+
+[template.args]
+mod_name = "Overevaluate"
+author = "miyucomics"
+show_landing_text = false
+
+[extra.hexcasting]
+_pattern_regex = { "!Raw" = '(?P<is_per_world>register|registerPerWorld)\("(?P<name>[^"]+)"?,\s"(?P<signature>[qweasd]+)",\sHexDir\.(?P<startdir>\w+)' }
+
+[[extra.hexcasting.pattern_stubs]]
+path = "{^^^_common.package}/OverevaluatePatterns.kt"
+regex = "{^_pattern_regex}"
+
+[_common]
+src = "../src"
+package = "{src}/main/java/miyucomics/overevaluate"

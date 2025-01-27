@@ -1,0 +1,161 @@
+{
+	"name": "overevaluate.page.metas.title",
+	"icon": "minecraft:writable_book",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 12,
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:janus",
+			"anchor": "overevaluate:janus",
+			"input": "",
+			"output": "",
+			"text": "overevaluate.page.janus.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.janus.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:maat",
+			"anchor": "overevaluate:maat",
+			"input": "boolean, any",
+			"output": "",
+			"text": "overevaluate.page.maat.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.maat.1"
+		},
+		{
+			"type": "hexcasting:manual_pattern",
+			"op_id": "overevaluate:nephthys",
+			"anchor": "overevaluate:nephthys",
+			"input": "pattern/list",
+			"output": "varies",
+			"text": "overevaluate.page.nephthys.0",
+			"patterns": [
+				{
+					"startdir": "SOUTH_EAST",
+					"signature": "deaqqd"
+				},
+				{
+					"startdir": "SOUTH_EAST",
+					"signature": "deaqqdq",
+					"q": 1,
+					"r": 2
+				},
+				{
+					"startdir": "SOUTH_EAST",
+					"signature": "deaqqdqe",
+					"q": 2,
+					"r": 4
+				}
+			]
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.nephthys.1"
+		},
+		{
+			"type": "hexcasting:manual_pattern",
+			"op_id": "overevaluate:sekhmet",
+			"anchor": "overevaluate:sekhmet",
+			"input": "",
+			"output": "varies",
+			"text": "overevaluate.page.sekhmet.0",
+			"patterns": [
+				{
+					"startdir": "SOUTH_WEST",
+					"signature": "qaqdd"
+				},
+				{
+					"startdir": "SOUTH_WEST",
+					"signature": "qaqddq",
+					"q": 1,
+					"r": 2
+				},
+				{
+					"startdir": "SOUTH_WEST",
+					"signature": "qaqddqe",
+					"q": 2,
+					"r": 4
+				}
+			]
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.sekhmet.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:atalanta",
+			"anchor": "overevaluate:atalanta",
+			"input": "",
+			"output": "",
+			"text": "overevaluate.page.atalanta.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.atalanta.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:castor",
+			"anchor": "overevaluate:castor",
+			"input": "any",
+			"output": "",
+			"text": "overevaluate.page.castor.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.castor.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:pollux",
+			"anchor": "overevaluate:pollux",
+			"input": "any",
+			"output": "",
+			"text": "overevaluate.page.pollux.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.pollux.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:sisyphus",
+			"anchor": "overevaluate:sisyphus",
+			"input": "list",
+			"output": "",
+			"text": "overevaluate.page.sisyphus.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.sisyphus.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:themis",
+			"anchor": "overevaluate:themis",
+			"input": "list, pattern/list",
+			"output": "list",
+			"text": "overevaluate.page.themis.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.themis.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:tutu",
+			"anchor": "overevaluate:tutu",
+			"input": "",
+			"output": "",
+			"text": "overevaluate.page.tutu.0"
+		}
+	]
+}
