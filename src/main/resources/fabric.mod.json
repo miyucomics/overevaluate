@@ -18,7 +18,7 @@
 		"main": [
 			{
 				"adapter": "kotlin",
-				"value": "OverevaluateMain"
+				"value": "miyucomics.overevaluate.OverevaluateMain"
 			}
 		]
 	},
