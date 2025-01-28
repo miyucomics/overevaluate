@@ -8,7 +8,9 @@ import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.common.casting.actions.stack.OpTwiddling
 import at.petrak.hexcasting.common.lib.hex.HexActions
 import at.petrak.hexcasting.xplat.IXplatAbstractions
+import miyucomics.overevaluate.handlers.GebSpecialHandler
 import miyucomics.overevaluate.handlers.NephthysSpecialHandler
+import miyucomics.overevaluate.handlers.NutSpecialHandler
 import miyucomics.overevaluate.handlers.SekhmetSpecialHandler
 import miyucomics.overevaluate.patterns.*
 import miyucomics.overevaluate.patterns.blackbox.OpBlackboxCreate
@@ -23,7 +25,7 @@ object OverevaluatePatterns {
 	fun init() {
 		register("swap_one_three", "ddwqaq", HexDir.NORTH_EAST, OpTwiddling(3, intArrayOf(2, 1, 0)))
 		register("swap_two_three", "aawede", HexDir.EAST, OpTwiddling(3, intArrayOf(1, 0, 2)))
-		register("dup_many", "waadadaa", HexDir.EAST, OpDupMany())
+		register("dup_many", "waadadaa", HexDir.EAST, OpDioscuriII())
 
 		register("blackbox_create", "wddwdwddw", HexDir.SOUTH_EAST, OpBlackboxCreate())
 
@@ -40,6 +42,8 @@ object OverevaluatePatterns {
 		register("themis", "dwaad", HexDir.WEST, OpThemis)
 		register("tutu", "eedqa", HexDir.WEST, OpTutu)
 
+		registerSpecialHandler("geb", GebSpecialHandler.Factory())
+		registerSpecialHandler("nut", NutSpecialHandler.Factory())
 		registerSpecialHandler("nephthys", NephthysSpecialHandler.Factory())
 		registerSpecialHandler("sekhmet", SekhmetSpecialHandler.Factory())
 	}

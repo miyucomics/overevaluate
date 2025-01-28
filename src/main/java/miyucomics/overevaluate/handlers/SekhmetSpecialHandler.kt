@@ -5,7 +5,7 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.api.utils.asTranslatedComponent
 import at.petrak.hexcasting.api.utils.lightPurple
-import miyucomics.overevaluate.patterns.metaevals.OpSekhmet
+import miyucomics.overevaluate.patterns.OpSekhmet
 
 class SekhmetSpecialHandler(private val perserve: Int) : SpecialHandler {
 	override fun act() = OpSekhmet(perserve)
