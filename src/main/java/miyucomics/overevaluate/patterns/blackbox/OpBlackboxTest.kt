@@ -13,10 +13,6 @@ object OpBlackboxTest : OperatorBasic(2, IotaMultiPredicate.pair(IotaPredicate.o
 		val iterator = iotas.iterator()
 		val list = (iterator.next() as BlackboxIota).contents
 		val test = iterator.next()
-		list.forEach {
-			if (Iota.tolerates(it, test))
-				return true.asActionResult
-		}
-		return false.asActionResult
+		return (list.indexOfFirst { Iota.tolerates(test, it) } != -1).asActionResult
 	}
 }
