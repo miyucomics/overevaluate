@@ -1,0 +1,115 @@
+{
+	"name": "overevaluate.page.extra_stack.title",
+	"icon": "minecraft:feather",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "hexcasting:manual_pattern",
+			"op_id": "overevaluate:sekhmet",
+			"anchor": "overevaluate:sekhmet",
+			"input": "",
+			"output": "varies",
+			"text": "overevaluate.page.sekhmet.0",
+			"patterns": [
+				{
+					"startdir": "SOUTH_WEST",
+					"signature": "qaqdd"
+				},
+				{
+					"startdir": "SOUTH_WEST",
+					"signature": "qaqddq",
+					"q": 1,
+					"r": 2
+				},
+				{
+					"startdir": "SOUTH_WEST",
+					"signature": "qaqddqe",
+					"q": 2,
+					"r": 4
+				}
+			]
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.sekhmet.1"
+		},
+		{
+			"type": "hexcasting:manual_pattern",
+			"op_id": "overevaluate:geb",
+			"anchor": "overevaluate:geb",
+			"input": "many",
+			"output": "many",
+			"text": "overevaluate.page.geb",
+			"patterns": [
+				{
+					"startdir": "WEST",
+					"signature": "aaeaad"
+				},
+				{
+					"startdir": "WEST",
+					"signature": "aaeaadw",
+					"q": 1,
+					"r": 2
+				},
+				{
+					"startdir": "WEST",
+					"signature": "aaeaadww",
+					"q": 2,
+					"r": 4
+				}
+			]
+		},
+		{
+			"type": "hexcasting:manual_pattern",
+			"op_id": "overevaluate:nut",
+			"anchor": "overevaluate:nut",
+			"input": "many",
+			"output": "many",
+			"text": "overevaluate.page.nut",
+			"patterns": [
+				{
+					"startdir": "EAST",
+					"signature": "aawdde"
+				},
+				{
+					"startdir": "EAST",
+					"signature": "aawddew",
+					"q": 1,
+					"r": 2
+				},
+				{
+					"startdir": "EAST",
+					"signature": "aawddeww",
+					"q": 2,
+					"r": 4
+				}
+			]
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:swap_one_three",
+			"anchor": "overevaluate:swap_one_three",
+			"input": "any, any, any",
+			"output": "any, any, any",
+			"text": "overevaluate.page.swap_one_three.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:swap_two_three",
+			"anchor": "overevaluate:swap_two_three",
+			"input": "any, any, any",
+			"output": "any, any, any",
+			"text": "overevaluate.page.swap_two_three.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:dup_many",
+			"anchor": "overevaluate:dup_many",
+			"input": "many, number",
+			"output": "many",
+			"text": "overevaluate.page.dup_many.summary"
+		}
+	]
+}

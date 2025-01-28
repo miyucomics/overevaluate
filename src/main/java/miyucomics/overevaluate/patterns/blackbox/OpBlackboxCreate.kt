@@ -8,5 +8,5 @@ import miyucomics.overevaluate.BlackboxIota
 class OpBlackboxCreate : ConstMediaAction {
 	override val argc = 0
 	override fun execute(args: List<Iota>, env: CastingEnvironment) =
-		listOf(BlackboxIota(hashSetOf()))
+		listOf(BlackboxIota(mutableListOf()))
 }

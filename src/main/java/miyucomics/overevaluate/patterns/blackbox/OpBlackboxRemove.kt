@@ -9,9 +9,10 @@ import miyucomics.overevaluate.BlackboxIota
 
 object OpBlackboxRemove : OperatorBasic(2, IotaMultiPredicate.pair(IotaPredicate.ofType(BlackboxIota.TYPE), IotaPredicate.TRUE)) {
 	override fun apply(iotas: Iterable<Iota>, env: CastingEnvironment): Iterable<Iota> {
-		val it = iotas.iterator()
-		val set = (it.next() as BlackboxIota).set.toHashSet()
-		set.remove(it.next())
-		return listOf(BlackboxIota(set))
+		val iterator = iotas.iterator()
+		val list = (iterator.next() as BlackboxIota).contents.toMutableList()
+		val remove = iterator.next()
+		list.removeIf { Iota.tolerates(remove, it) }
+		return listOf(BlackboxIota(list))
 	}
 }

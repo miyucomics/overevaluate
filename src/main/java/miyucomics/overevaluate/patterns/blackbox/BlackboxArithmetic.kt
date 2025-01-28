@@ -14,33 +14,41 @@ import at.petrak.hexcasting.api.casting.math.HexPattern
 import miyucomics.overevaluate.BlackboxIota
 
 object BlackboxArithmetic : Arithmetic {
-	override fun arithName() = "blackbox_ops"
-	override fun opTypes() = listOf(APPEND, SUB, INDEX_OF, ABS, ADD, AND, XOR, OR)
+	override fun arithName() = "blackbox"
+	override fun opTypes() = listOf(APPEND, REMOVE, INDEX_OF, ABS, AND, XOR, OR)
 	override fun getOperator(pattern: HexPattern): Operator {
 		return when (pattern) {
 			APPEND -> OpBlackboxAdd
 			REMOVE -> OpBlackboxRemove
 			INDEX_OF -> OpBlackboxTest
-			ABS -> OperatorUnary(all(IotaPredicate.ofType(BlackboxIota.TYPE))) { blackbox: Iota -> DoubleIota(downcast(blackbox, BlackboxIota.TYPE).set.size.toDouble()) }
+			ABS -> OperatorUnary(all(IotaPredicate.ofType(BlackboxIota.TYPE))) { blackbox: Iota -> DoubleIota(downcast(blackbox, BlackboxIota.TYPE).contents.size.toDouble()) }
 			OR -> OpBlackboxBinary { a, b ->
-				val orSet = a.toHashSet()
+				val orSet = a.toMutableList()
 				orSet.addAll(b)
-				orSet
+				removeDuplicates(orSet)
 			}
 			AND -> OpBlackboxBinary { a, b ->
-				val andSet = a.toHashSet()
+				val andSet = a.toMutableList()
 				andSet.retainAll(b)
-				andSet
+				removeDuplicates(andSet)
 			}
 			XOR -> OpBlackboxBinary { a, b ->
-				val xorSet = a.toHashSet()
+				val xorSet = a.toMutableList()
 				xorSet.addAll(b)
-				val intersection = a.toHashSet()
+				val intersection = a.toMutableList()
 				intersection.retainAll(b)
 				xorSet.removeAll(intersection)
-				xorSet
+				removeDuplicates(xorSet)
 			}
 			else -> throw InvalidOperatorException("$pattern is not a valid operator in Arithmetic $this.")
 		}
+	}
+
+	private fun removeDuplicates(input: List<Iota>): List<Iota> {
+		val out = mutableListOf<Iota>()
+		for (subiota in input)
+			if (out.none { Iota.tolerates(it, subiota) })
+				out.add(subiota)
+		return out
 	}
 }
