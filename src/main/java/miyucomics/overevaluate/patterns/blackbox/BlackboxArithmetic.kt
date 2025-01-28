@@ -22,24 +22,9 @@ object BlackboxArithmetic : Arithmetic {
 			REMOVE -> OpBlackboxRemove
 			INDEX_OF -> OpBlackboxTest
 			ABS -> OperatorUnary(all(IotaPredicate.ofType(BlackboxIota.TYPE))) { blackbox: Iota -> DoubleIota(downcast(blackbox, BlackboxIota.TYPE).contents.size.toDouble()) }
-			OR -> OpBlackboxBinary { a, b ->
-				val orSet = a.toMutableList()
-				orSet.addAll(b)
-				removeDuplicates(orSet)
-			}
-			AND -> OpBlackboxBinary { a, b ->
-				val andSet = a.toMutableList()
-				andSet.retainAll(b)
-				removeDuplicates(andSet)
-			}
-			XOR -> OpBlackboxBinary { a, b ->
-				val xorSet = a.toMutableList()
-				xorSet.addAll(b)
-				val intersection = a.toMutableList()
-				intersection.retainAll(b)
-				xorSet.removeAll(intersection)
-				removeDuplicates(xorSet)
-			}
+			OR -> OpBlackboxBinary { a, b -> a + b.filter { x -> a.none { Iota.tolerates(x, it) } } }
+			AND -> OpBlackboxBinary { a, b -> a.filter { x -> b.any { Iota.tolerates(x, it) } } }
+			XOR -> OpBlackboxBinary { a, b -> a.filter { x0 -> b.none {Iota.tolerates(x0, it) } } + b.filter { x1 -> a.none { Iota.tolerates(x1, it) } } }
 			else -> throw InvalidOperatorException("$pattern is not a valid operator in Arithmetic $this.")
 		}
 	}
