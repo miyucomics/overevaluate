@@ -28,12 +28,4 @@ object BlackboxArithmetic : Arithmetic {
 			else -> throw InvalidOperatorException("$pattern is not a valid operator in Arithmetic $this.")
 		}
 	}
-
-	private fun removeDuplicates(input: List<Iota>): List<Iota> {
-		val out = mutableListOf<Iota>()
-		for (subiota in input)
-			if (out.none { Iota.tolerates(it, subiota) })
-				out.add(subiota)
-		return out
-	}
 }
