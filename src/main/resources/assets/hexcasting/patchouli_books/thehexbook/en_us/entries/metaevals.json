@@ -7,6 +7,34 @@
 	"pages": [
 		{
 			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:athena",
+			"anchor": "overevaluate:athena",
+			"input": "[pattern] | pattern",
+			"output": "boolean",
+			"text": "overevaluate.page.athena.0"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:athena_print",
+			"anchor": "overevaluate:athena_print",
+			"input": "",
+			"output": "",
+			"text": "overevaluate.page.athena_print.0"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:tutu",
+			"anchor": "overevaluate:tutu",
+			"input": "",
+			"output": "",
+			"text": "overevaluate.page.tutu.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.tutu.1"
+		},
+		{
+			"type": "hexcasting:pattern",
 			"op_id": "overevaluate:janus",
 			"anchor": "overevaluate:janus",
 			"input": "",
@@ -118,14 +146,6 @@
 		{
 			"type": "patchouli:text",
 			"text": "overevaluate.page.themis.1"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:tutu",
-			"anchor": "overevaluate:tutu",
-			"input": "",
-			"output": "",
-			"text": "overevaluate.page.tutu.0"
 		}
 	]
 }
