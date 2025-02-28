@@ -1,6 +1,4 @@
 {
-	"iota.overevaluate.blackbox": "[BLACKBOX]",
-
 	"hexcasting.mishap.hexical:assert": "Assertion failed: %s.",
 	"hexcasting.mishap.hexical:needs_skippable": "Expected to be run inside of a skippable context.",
 	"hexcasting.mishap.hexical:needs_thoth": "Expected to be run inside of Thoth's Gambit.",
@@ -26,18 +24,6 @@
 	"overevaluate.page.swap_two_three.summary": "Causes the third-from-the-top iota to bubble up over the second-from-the-top iota, essentially swapping them.",
 	"hexcasting.action.overevaluate:dup_many": "Dioscuri Gambit II",
 	"overevaluate.page.dup_many.summary": "Takes a number and duplicates that many elements of the stack while preserving order.",
-
-	"overevaluate.page.blackbox.title": "Blackboxes",
-	"overevaluate.page.blackbox.0": "$(thing)Blackbox$() iotas hold other iotas like lists do but much, much more specialized. Standard list operations such as adding, removing, and observing the presence of an iota, and performing operations on two $(thing)Blackboxes$() are all possible, but the inserted iotas are irretrievable. Due to this $(thing)Blackboxes$(), they are able to ignore usual iota protections...",
-	"hexcasting.action.overevaluate:blackbox_create": "Blackbox Reflection",
-	"overevaluate.page.blackbox_create": "Creates a $(thing)Blackbox$().",
-	"overevaluate.page.blackbox_add": "Adds an iota to the $(thing)Blackbox$(). Bypasses the Transgress Others mishap.",
-	"overevaluate.page.blackbox_remove": "Removes an iota from the $(thing)Blackbox$() if it is there. Does not mishap if it's not.",
-	"overevaluate.page.blackbox_test": "Tests the $(thing)Blackbox$() for the existence of an iota. Pushes a simple true or false.",
-	"overevaluate.page.blackbox_size": "Pushes the number of iotas contained within the $(thing)Blackbox$().",
-	"overevaluate.page.blackbox_or": "Combines the iota from both $(thing)Blackboxes$(). The result is a $(thing)Blackbox$() that contains iotas from both, although without duplicates.",
-	"overevaluate.page.blackbox_and": "Produces a $(thing)Blackbox$() with only iotas common to both $(thing)Blackboxes$().",
-	"overevaluate.page.blackbox_xor": "Produces a $(thing)Blackbox$() with iotas that are in one but not both $(thing)Blackboxes$().",
 
 	"overevaluate.page.soroban.title": "Soroban",
 	"overevaluate.page.soroban.0": "These patterns perform simple integer operations on an imaginary counter called the soroban. They may be useful when $(l:patterns/readwrite#hexcasting:local)Ravenmind$() is occupied or unnecessarily complicated, for example to count iterations in a $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's$() loop.",
