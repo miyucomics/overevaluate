@@ -1,8 +1,8 @@
 {
-	"hexcasting.mishap.hexical:assert": "Assertion failed: %s.",
-	"hexcasting.mishap.hexical:needs_skippable": "Expected to be run inside of a skippable context.",
-	"hexcasting.mishap.hexical:needs_thoth": "Expected to be run inside of Thoth's Gambit.",
-	"hexcasting.mishap.hexical:themis": "Expected a number at the top of the Themis pseudo-stack.",
+	"hexcasting.mishap.overevaluate:assert": "Assertion failed: %s.",
+	"hexcasting.mishap.overevaluate:needs_skippable": "Expected to be run inside of a skippable context.",
+	"hexcasting.mishap.overevaluate:needs_thoth": "Expected to be run inside of Thoth's Gambit.",
+	"hexcasting.mishap.overevaluate:themis": "Expected a number at the top of the Themis pseudo-stack.",
 
 	"overevaluate.page.extra_stack.title": "Extra Stack Manipulation",
 	"special.overevaluate.sekhmet": "Sekhmet's Gambit: %s",
