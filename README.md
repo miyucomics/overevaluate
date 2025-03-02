@@ -1,3 +1,3 @@
 # Overevaluate
 
-An addon that adds sets and patterns for advanced metaevals and stack manipulation to Hexcasting.
+An addon that adds patterns for advanced metaevals and stack manipulation to Hexcasting, as well as caches for optimized casting.

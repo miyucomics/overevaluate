@@ -12,6 +12,9 @@ import miyucomics.overevaluate.handlers.GebSpecialHandler
 import miyucomics.overevaluate.handlers.NephthysSpecialHandler
 import miyucomics.overevaluate.handlers.NutSpecialHandler
 import miyucomics.overevaluate.handlers.SekhmetSpecialHandler
+import miyucomics.overevaluate.iotas.DoubleCacheIota
+import miyucomics.overevaluate.iotas.EntityCacheIota
+import miyucomics.overevaluate.iotas.VectorCacheIota
 import miyucomics.overevaluate.patterns.*
 import miyucomics.overevaluate.patterns.metaevals.*
 import miyucomics.overevaluate.patterns.soroban.OpSorobanDecrement
@@ -40,6 +43,10 @@ object OverevaluatePatterns {
 		register("sisyphus", "qaqwede", HexDir.NORTH_EAST, OpSisyphus)
 		register("themis", "dwaad", HexDir.WEST, OpThemis)
 		register("tutu", "eedqa", HexDir.WEST, OpTutu)
+
+		register("create_double_cache", "", HexDir.EAST, OpConstant { DoubleCacheIota(hashSetOf()) })
+		register("create_entity_cache", "", HexDir.EAST, OpConstant { EntityCacheIota(hashMapOf()) })
+		register("create_vector_cache", "", HexDir.EAST, OpConstant { VectorCacheIota(hashSetOf()) })
 
 		registerSpecialHandler("geb", GebSpecialHandler.Factory())
 		registerSpecialHandler("nut", NutSpecialHandler.Factory())

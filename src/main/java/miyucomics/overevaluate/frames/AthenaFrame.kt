@@ -8,6 +8,7 @@ import at.petrak.hexcasting.api.casting.SpellList
 import at.petrak.hexcasting.api.casting.eval.CastResult
 import at.petrak.hexcasting.api.casting.eval.ResolvedPatternType
 import at.petrak.hexcasting.api.casting.eval.sideeffects.OperatorSideEffect
+import at.petrak.hexcasting.api.casting.eval.vm.FrameEvaluate
 import at.petrak.hexcasting.api.casting.iota.BooleanIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.ListIota
@@ -28,12 +29,12 @@ data class AthenaFrame(val code: SpellList) : ContinuationFrame {
 		return false to newStack
 	}
 
-	override fun evaluate(continuation: SpellContinuation, level: ServerWorld, harness: CastingVM): CastResult {
+	override fun evaluate(continuation: SpellContinuation, world: ServerWorld, harness: CastingVM): CastResult {
 		if (!code.nonEmpty)
 			return CastResult(ListIota(code), continuation, null, listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.HERMES)
 
 		val moreToExecute = code.cdr.nonEmpty
-		val update = harness.executeInner(code.car, level, if (moreToExecute) continuation.pushFrame(AthenaFrame(code.cdr)) else continuation)
+		val update = harness.executeInner(code.car, world, continuation.pushFrame(FrameEvaluate(code.cdr, true)))
 		val safeSideEffects = update.sideEffects.toMutableList()
 		val mishapped = safeSideEffects.removeIf { sideEffect ->
 			if (sideEffect is OperatorSideEffect.DoMishap) {
@@ -79,7 +80,7 @@ data class AthenaFrame(val code: SpellList) : ContinuationFrame {
 	companion object {
 		val TYPE: ContinuationFrame.Type<AthenaFrame> = object : ContinuationFrame.Type<AthenaFrame> {
 			override fun deserializeFromNBT(tag: NbtCompound, world: ServerWorld) =
-				AthenaFrame(HexIotaTypes.LIST.deserialize(tag.getList("patterns", NbtElement.COMPOUND_TYPE), world)!!.list)
+				AthenaFrame(HexIotaTypes.LIST.deserialize(tag.getList("code", NbtElement.COMPOUND_TYPE), world)!!.list)
 		}
 	}
 }
