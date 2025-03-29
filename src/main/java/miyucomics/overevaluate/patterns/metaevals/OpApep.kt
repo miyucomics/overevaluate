@@ -11,9 +11,10 @@ import at.petrak.hexcasting.api.casting.getList
 import at.petrak.hexcasting.api.casting.iota.ListIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
+import miyucomics.overevaluate.frames.ApepFrame
 import miyucomics.overevaluate.frames.ThemisFrame
 
-object OpThemis : Action {
+object OpApep : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
 		val stack = image.stack.toMutableList()
 		if (stack.size < 2)
@@ -31,7 +32,7 @@ object OpThemis : Action {
 		return OperationResult(
 			image.withResetEscape().copy(stack = stack),
 			listOf(),
-			continuation.pushFrame(ThemisFrame(data, code, null, mutableListOf(), mutableListOf())),
+			continuation.pushFrame(ApepFrame(data.cdr, code, null, mutableListOf(data.car))),
 			HexEvalSounds.THOTH
 		)
 	}

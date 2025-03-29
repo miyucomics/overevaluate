@@ -30,6 +30,7 @@ object OverevaluatePatterns {
 		register("soroban_increment", "wdeaqq", HexDir.NORTH_EAST, OpSorobanIncrement())
 		register("soroban_reset", "qdeeaae", HexDir.NORTH_EAST, OpSorobanReset())
 
+		register("apep", "dqd", HexDir.EAST, OpApep)
 		register("athena", "dweaqqw", HexDir.SOUTH_EAST, OpAthena)
 		register("athena_print", "dweaqqqqa", HexDir.SOUTH_EAST, OpAthenaPrint)
 		register("atalanta", "aqdea", HexDir.SOUTH_WEST, OpAtalanta)
