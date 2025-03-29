@@ -3,7 +3,7 @@
 	"id": "overevaluate",
 	"version": "${version}",
 	"name": "Overevaluate",
-	"description": "Adds property iota for simple iota storage, state keeping, and syncing.",
+	"description": "Adds patterns for advanced stack manipulation and meta-evaluation, as well as caches to massively speed up spells such as veinminer.",
 	"authors": [
 		"miyucomics"
 	],
