@@ -5,6 +5,7 @@ import at.petrak.hexcasting.api.casting.castables.Action
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.eval.OperationResult
 import at.petrak.hexcasting.api.casting.eval.vm.CastingImage
+import at.petrak.hexcasting.api.casting.eval.vm.FrameEvaluate
 import at.petrak.hexcasting.api.casting.eval.vm.FrameFinishEval
 import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation
 import at.petrak.hexcasting.api.casting.evaluatable
@@ -30,7 +31,13 @@ object OpAthena : Action {
 			}
 
 		val instructionList = instrs.map({ SpellList.LList(0, listOf(it)) }, { it })
-		val frame = AthenaFrame(instructionList)
-		return OperationResult(image.withUsedOp().copy(stack = newStack), listOf(), newCont.pushFrame(frame), HexEvalSounds.HERMES)
+		return OperationResult(
+			image.withUsedOp().copy(stack = newStack),
+			listOf(),
+			newCont
+				.pushFrame(AthenaFrame)
+				.pushFrame(FrameEvaluate(instructionList, false)),
+			HexEvalSounds.HERMES
+		)
 	}
 }
