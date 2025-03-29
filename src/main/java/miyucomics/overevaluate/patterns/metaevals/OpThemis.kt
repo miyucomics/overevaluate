@@ -17,7 +17,7 @@ object OpThemis : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
 		val stack = image.stack.toMutableList()
 		if (stack.size < 2)
-			throw MishapNotEnoughArgs(1, 0)
+			throw MishapNotEnoughArgs(2, stack.size)
 		val data = stack.getList(stack.lastIndex - 1)
 		val code = evaluatable(stack[stack.lastIndex], 0).map({ SpellList.LList(0, listOf(it)) }, { it })
 		stack.removeLastOrNull()
