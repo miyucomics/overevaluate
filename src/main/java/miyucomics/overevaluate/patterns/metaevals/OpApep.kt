@@ -31,7 +31,7 @@ object OpApep : Action {
 		return OperationResult(
 			image.withResetEscape().copy(stack = stack),
 			listOf(),
-			continuation.pushFrame(ApepFrame(data.cdr, code, null, mutableListOf(data.car))),
+			continuation.pushFrame(ApepFrame(data.cdr, code, data.car, null)),
 			HexEvalSounds.THOTH
 		)
 	}

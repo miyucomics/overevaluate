@@ -8,6 +8,7 @@ import at.petrak.hexcasting.api.casting.eval.vm.ContinuationFrame
 import at.petrak.hexcasting.api.casting.eval.vm.FrameEvaluate
 import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation
 import at.petrak.hexcasting.api.casting.iota.Iota
+import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.iota.ListIota
 import at.petrak.hexcasting.api.utils.getList
 import at.petrak.hexcasting.api.utils.hasList
@@ -17,13 +18,13 @@ import at.petrak.hexcasting.common.lib.hex.HexIotaTypes
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.server.world.ServerWorld
 
-data class ApepFrame(val data: SpellList, val code: SpellList, val baseStack: List<Iota>?, val scan: MutableList<Iota>) : ContinuationFrame {
+data class ApepFrame(val data: SpellList, val code: SpellList, var acc: Iota, val baseStack: List<Iota>?) : ContinuationFrame {
 	override val type: ContinuationFrame.Type<*> = TYPE
 
 	override fun breakDownwards(stack: List<Iota>): Pair<Boolean, List<Iota>> {
 		val newStack = baseStack?.toMutableList() ?: mutableListOf()
-		stack.lastOrNull()?.let { scan.add(it) }
-		newStack.add(ListIota(scan))
+		stack.lastOrNull()?.let { acc = it }
+		newStack.add(acc)
 		return true to newStack
 	}
 
@@ -31,20 +32,19 @@ data class ApepFrame(val data: SpellList, val code: SpellList, val baseStack: Li
 		val stack = if (baseStack == null) {
 			vm.image.stack.toList()
 		} else {
-			vm.image.stack.lastOrNull()?.let { scan.add(it) }
+			vm.image.stack.lastOrNull()?.let { acc = it }
 			baseStack
 		}
 
 		val newStack = stack.toMutableList()
 		val (newImage, newCont) = if (data.nonEmpty) {
-			val cont2 = continuation
-				.pushFrame(ApepFrame(data.cdr, code, stack, scan))
-				.pushFrame(FrameEvaluate(code, true))
-			newStack.add(scan.last())
+			newStack.add(acc)
 			newStack.add(data.car)
-			Pair(vm.image.withUsedOp(), cont2)
+			Pair(vm.image.withUsedOp(), continuation
+				.pushFrame(ApepFrame(data.cdr, code, acc, stack))
+				.pushFrame(FrameEvaluate(code, true)))
 		} else {
-			newStack.add(ListIota(scan))
+			newStack.add(acc)
 			Pair(vm.image, continuation)
 		}
 
@@ -62,13 +62,13 @@ data class ApepFrame(val data: SpellList, val code: SpellList, val baseStack: Li
 		val compound = NbtCompound()
 		compound.put("data", data.serializeToNBT())
 		compound.put("code", code.serializeToNBT())
+		compound.put("acc", IotaType.serialize(acc))
 		if (baseStack != null)
 			compound.put("base", baseStack.serializeToNBT())
-		compound.put("scan", scan.serializeToNBT())
 		return compound
 	}
 
-	override fun size() = data.size() + code.size() + scan.size + (baseStack?.size ?: 0)
+	override fun size() = data.size() + code.size() + acc.size() + (baseStack?.size ?: 0)
 
 	companion object {
 		@JvmField
@@ -77,11 +77,8 @@ data class ApepFrame(val data: SpellList, val code: SpellList, val baseStack: Li
 				return ApepFrame(
 					HexIotaTypes.LIST.deserialize(tag.getList("data", NbtCompound.COMPOUND_TYPE), world)!!.list,
 					HexIotaTypes.LIST.deserialize(tag.getList("code", NbtCompound.COMPOUND_TYPE), world)!!.list,
-					if (tag.hasList("base", NbtCompound.COMPOUND_TYPE))
-						HexIotaTypes.LIST.deserialize(tag.getList("base", NbtCompound.COMPOUND_TYPE), world)!!.list.toList()
-					else
-						null,
-					HexIotaTypes.LIST.deserialize(tag.getList("scan", NbtCompound.COMPOUND_TYPE), world)!!.list.toMutableList(),
+					IotaType.deserialize(tag.getCompound("acc"), world),
+					if (tag.hasList("base", NbtCompound.COMPOUND_TYPE)) HexIotaTypes.LIST.deserialize(tag.getList("base", NbtCompound.COMPOUND_TYPE), world)!!.list.toList() else null
 				)
 			}
 		}

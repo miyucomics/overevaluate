@@ -10,7 +10,7 @@
 			"op_id": "overevaluate:apep",
 			"anchor": "overevaluate:apep",
 			"input": "list, [pattern] | pattern",
-			"output": "list",
+			"output": "any",
 			"text": "overevaluate.page.apep.0"
 		},
 		{
