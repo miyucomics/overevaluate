@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/overevaluate/tree/bc108856231ed50e4bdd56da83d2f24062627d81"
+      href="https://github.com/miyucomics/overevaluate/tree/d544a9eaaf93d0bc8734505f6ea2b220075b16cc"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -799,7 +799,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="metaevals@overevaluate:apep" class="">
-<h4 class="pattern-title">Apep&#39;s Gambit (list, [pattern] | pattern → list)<a
+<h4 class="pattern-title">Apep&#39;s Gambit (list, [pattern] | pattern → any)<a
     href="#metaevals@overevaluate:apep"
     class="permalink small"
     title="Permalink"
@@ -851,10 +851,10 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: dqd</canvas>
   </details>
-      <p>Scans across the first list using the <span style="color: #b38ef3">Hex</span> in the second list.</p>
+      <p>Folds across the first list using the <span style="color: #b38ef3">Hex</span> in the second list.</p>
   </div>
 <br />
-    <p>The first cast applies the <span style="color: #b38ef3">Hex</span> on first and second iota. The top iota left after the cast (mishaps if none exist) is memorized. The next cast applies the <span style="color: #b38ef3">Hex</span> on the last memorized iota and the third iota. Again, the top is memorized, and the process repeats with the fourth, fifth, sixth, etc... iota until the end of the first list. Finally, pushes all memorized iota to the stack in a list.</p><p><i>Euler did music too, you know</i></p>
+    <p>Starts with the first two elements of the list and casts the <span style="color: #b38ef3">Hex</span> on them. Then, the top iota remaining after casting and the next element in the list are placed on the stack and casted upon, repeating until the entire list has been exhausted. The top iota after all that is finally pushed onto the stack.</p><p><i>Euler did music too, you know</i></p>
 <br />
   <div id="metaevals@overevaluate:athena" class="">
 <h4 class="pattern-title">Athena&#39;s Gambit ([pattern] | pattern → boolean)<a
