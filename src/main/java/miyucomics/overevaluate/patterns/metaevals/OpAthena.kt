@@ -23,18 +23,12 @@ object OpAthena : Action {
 
 	private fun exec(image: CastingImage, continuation: SpellContinuation, newStack: MutableList<Iota>, iota: Iota): OperationResult {
 		val instrs = evaluatable(iota, 0)
-		val newCont =
-			if (instrs.left().isPresent || (continuation is SpellContinuation.NotDone && continuation.frame is FrameFinishEval)) {
-				continuation
-			} else {
-				continuation.pushFrame(FrameFinishEval)
-			}
-
 		val instructionList = instrs.map({ SpellList.LList(0, listOf(it)) }, { it })
 		return OperationResult(
 			image.withUsedOp().copy(stack = newStack),
 			listOf(),
-			newCont
+			continuation
+				.pushFrame(FrameFinishEval)
 				.pushFrame(AthenaFrame)
 				.pushFrame(FrameEvaluate(instructionList, false)),
 			HexEvalSounds.HERMES

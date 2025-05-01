@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "miyucomics.overevaluate.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"minVersion": "0.8",
+	"mixins": [
+		"PatternIotaMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
