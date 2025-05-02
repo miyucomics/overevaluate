@@ -21,7 +21,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "overevaluate:athena",
 			"anchor": "overevaluate:athena",
-			"input": "[pattern] | pattern",
+			"input": "[pattern]",
 			"output": "boolean",
 			"text": "overevaluate.page.athena.0"
 		},

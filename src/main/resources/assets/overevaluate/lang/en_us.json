@@ -40,7 +40,7 @@
 	"overevaluate.page.apep.0": "Folds across the first list using the _Hex in the second list.",
 	"overevaluate.page.apep.1": "Starts with the first two elements of the list and casts the _Hex on them. Then, the top iota remaining after casting and the next element in the list are placed on the stack and casted upon, repeating until the entire list has been exhausted. The top iota after all that is finally pushed onto the stack.$(br2)$(o)Euler did music too, you know$()",
 	"hexcasting.action.overevaluate:athena": "Athena's Gambit",
-	"overevaluate.page.athena.0": "Like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit$() but mishaps simply stop the execution and continue the _Hex without incurring the effects of the mishap. Pushes whether it mishapped.",
+	"overevaluate.page.athena.0": "Works like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit$() but mishaps skip the remaining patterns and continue the _Hex without incurring the effects of the mishap. Pushes if a mishap occured.",
 	"hexcasting.action.overevaluate:athena_print": "Athena's Revelation",
 	"overevaluate.page.athena_print.0": "Prints the last mishap that was caught by $(l:metaevals#overevaluate:athena)$(action)Athena's Gambit$().$(br2)$(o)Keep moving forward.$()",
 	"hexcasting.action.overevaluate:tutu": "Tutu's Gambit",
