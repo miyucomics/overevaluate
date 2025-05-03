@@ -21,6 +21,10 @@ repositories {
     maven { url = "https://mvn.devos.one/snapshots/" }
     maven { url = "https://maven.ladysnake.org/releases" }
 	maven { url = "https://api.modrinth.com/maven" }
+	flatDir {
+		name="localLibs"
+		dir "libs"
+	}
 }
 
 dependencies {
@@ -41,6 +45,8 @@ dependencies {
 	modLocalRuntime "me.shedaniel.cloth:cloth-config-fabric:$cloth_config_version"
 	modLocalRuntime "com.samsthenerd.inline:inline-fabric:$minecraft_version-$inline_version"
 	modLocalRuntime files("${rootProject.rootDir}/libs/serialization-hooks-0.4.99999.jar")
+
+	modImplementation "localLibs:moreiotas-fabric-${minecraft_version}:${moreiotas_version}"
 }
 
 processResources {

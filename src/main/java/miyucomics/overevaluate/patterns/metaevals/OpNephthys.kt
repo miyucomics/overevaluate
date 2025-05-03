@@ -24,7 +24,7 @@ class OpNephthys(private val depth: Int) : Action {
 		stack.removeLast()
 		val toRestore = stack.popStack(depth)
 
-		return OperationResult(image.copy(stack = stack), listOf(),
+		return OperationResult(image.withUsedOp().copy(stack = stack), listOf(),
 			continuation
 				.pushFrame(NephthysFrame(toRestore))
 				.pushFrame(FrameFinishEval)

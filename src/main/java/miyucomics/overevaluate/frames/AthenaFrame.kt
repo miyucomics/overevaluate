@@ -2,6 +2,7 @@ package miyucomics.overevaluate.frames
 
 import at.petrak.hexcasting.api.casting.eval.CastResult
 import at.petrak.hexcasting.api.casting.eval.ResolvedPatternType
+import at.petrak.hexcasting.api.casting.eval.sideeffects.OperatorSideEffect
 import at.petrak.hexcasting.api.casting.eval.vm.CastingVM
 import at.petrak.hexcasting.api.casting.eval.vm.ContinuationFrame
 import at.petrak.hexcasting.api.casting.eval.vm.FrameFinishEval
@@ -15,6 +16,7 @@ import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.server.world.ServerWorld
+import net.minecraft.text.Text
 
 object AthenaFrame : ContinuationFrame {
 	private val TYPE: ContinuationFrame.Type<AthenaFrame> = object : ContinuationFrame.Type<AthenaFrame> {
@@ -54,7 +56,13 @@ object AthenaFrame : ContinuationFrame {
 
 		val stack = vm.image.stack.toMutableList()
 		stack.add(BooleanIota(true))
-		return CastResult(pattern, reduced, vm.image.copy(stack = stack), listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.NORMAL_EXECUTE)
+		val newImage = vm.image.copy(stack = stack)
+
+		val mishap = original.sideEffects.find { it is OperatorSideEffect.DoMishap }
+		if (mishap != null)
+			newImage.userData.putString("last_mishap", Text.Serializer.toJson((mishap as OperatorSideEffect.DoMishap).mishap.errorMessageWithName(vm.env, mishap.errorCtx)))
+
+		return CastResult(pattern, reduced, newImage, listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.NORMAL_EXECUTE)
 	}
 
 	private fun reduceAthena(continuation: SpellContinuation): SpellContinuation? {

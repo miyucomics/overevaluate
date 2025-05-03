@@ -7,23 +7,15 @@
 	"pages": [
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:apep",
-			"anchor": "overevaluate:apep",
-			"input": "list, [pattern] | pattern",
-			"output": "any",
-			"text": "overevaluate.page.apep.0"
+			"op_id": "overevaluate:athena",
+			"anchor": "overevaluate:athena",
+			"input": "list of patterns",
+			"output": "boolean",
+			"text": "overevaluate.page.athena.summary"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.apep.1"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:athena",
-			"anchor": "overevaluate:athena",
-			"input": "[pattern]",
-			"output": "boolean",
-			"text": "overevaluate.page.athena.0"
+			"text": "overevaluate.page.athena.description"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -31,7 +23,27 @@
 			"anchor": "overevaluate:athena_print",
 			"input": "",
 			"output": "",
-			"text": "overevaluate.page.athena_print.0"
+			"text": "overevaluate.page.athena_print.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:athena_log",
+			"anchor": "overevaluate:athena_log",
+			"input": "",
+			"output": "garbage/string",
+			"text": "overevaluate.page.athena_log.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:apep",
+			"anchor": "overevaluate:apep",
+			"input": "list, [pattern] | pattern",
+			"output": "any",
+			"text": "overevaluate.page.apep.summary"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.apep.description"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -39,11 +51,11 @@
 			"anchor": "overevaluate:tutu",
 			"input": "",
 			"output": "",
-			"text": "overevaluate.page.tutu.0"
+			"text": "overevaluate.page.tutu.summary"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.tutu.1"
+			"text": "overevaluate.page.tutu.description"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -51,11 +63,11 @@
 			"anchor": "overevaluate:janus",
 			"input": "",
 			"output": "",
-			"text": "overevaluate.page.janus.0"
+			"text": "overevaluate.page.janus.summary"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.janus.1"
+			"text": "overevaluate.page.janus.description"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -63,11 +75,11 @@
 			"anchor": "overevaluate:maat",
 			"input": "boolean, any",
 			"output": "",
-			"text": "overevaluate.page.maat.0"
+			"text": "overevaluate.page.maat.summary"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.maat.1"
+			"text": "overevaluate.page.maat.description"
 		},
 		{
 			"type": "hexcasting:manual_pattern",
@@ -75,7 +87,7 @@
 			"anchor": "overevaluate:nephthys",
 			"input": "pattern/list",
 			"output": "varies",
-			"text": "overevaluate.page.nephthys.0",
+			"text": "overevaluate.page.nephthys.summary",
 			"patterns": [
 				{
 					"startdir": "SOUTH_EAST",
@@ -97,7 +109,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.nephthys.1"
+			"text": "overevaluate.page.nephthys.description"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -105,11 +117,11 @@
 			"anchor": "overevaluate:atalanta",
 			"input": "",
 			"output": "",
-			"text": "overevaluate.page.atalanta.0"
+			"text": "overevaluate.page.atalanta.summary"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.atalanta.1"
+			"text": "overevaluate.page.atalanta.description"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -117,11 +129,11 @@
 			"anchor": "overevaluate:castor",
 			"input": "any",
 			"output": "",
-			"text": "overevaluate.page.castor.0"
+			"text": "overevaluate.page.castor.summary"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.castor.1"
+			"text": "overevaluate.page.castor.description"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -129,11 +141,11 @@
 			"anchor": "overevaluate:pollux",
 			"input": "any",
 			"output": "",
-			"text": "overevaluate.page.pollux.0"
+			"text": "overevaluate.page.pollux.summary"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.pollux.1"
+			"text": "overevaluate.page.pollux.description"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -141,11 +153,11 @@
 			"anchor": "overevaluate:sisyphus",
 			"input": "list",
 			"output": "",
-			"text": "overevaluate.page.sisyphus.0"
+			"text": "overevaluate.page.sisyphus.summary"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.sisyphus.1"
+			"text": "overevaluate.page.sisyphus.description"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -153,11 +165,11 @@
 			"anchor": "overevaluate:themis",
 			"input": "list, pattern/list",
 			"output": "list",
-			"text": "overevaluate.page.themis.0"
+			"text": "overevaluate.page.themis.summary"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "overevaluate.page.themis.1"
+			"text": "overevaluate.page.themis.description"
 		}
 	]
 }

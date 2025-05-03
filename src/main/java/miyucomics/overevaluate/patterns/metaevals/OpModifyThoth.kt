@@ -39,6 +39,6 @@ abstract class OpModifyThoth : Action {
 		while (callStack.isNotEmpty())
 			newContinuation = newContinuation.pushFrame(callStack.removeLast())
 
-		return OperationResult(image.copy(stack = newStack).withUsedOp(), listOf(), newContinuation, HexEvalSounds.SPELL)
+		return OperationResult(image.withUsedOp().copy(stack = newStack), listOf(), newContinuation, HexEvalSounds.SPELL)
 	}
 }

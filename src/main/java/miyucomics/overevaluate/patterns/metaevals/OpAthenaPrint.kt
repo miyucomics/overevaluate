@@ -12,6 +12,6 @@ object OpAthenaPrint : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
 		if (image.userData.contains("last_mishap"))
 			env.printMessage(Text.Serializer.fromJson(image.userData.getString("last_mishap")))
-		return OperationResult(image, listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
+		return OperationResult(image.withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }
