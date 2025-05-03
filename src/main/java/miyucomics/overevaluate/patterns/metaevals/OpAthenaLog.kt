@@ -9,7 +9,6 @@ import at.petrak.hexcasting.api.casting.iota.GarbageIota
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.text.Text
-import net.minecraft.util.Language
 import ram.talia.moreiotas.api.casting.iota.StringIota
 
 object OpAthenaLog : Action {
