@@ -33,6 +33,7 @@ object OverevaluatePatterns {
 		register("apep", "dqd", HexDir.EAST, OpApep)
 		register("athena", "dweaqqw", HexDir.SOUTH_EAST, OpAthena)
 		register("athena_print", "dweaqqqqa", HexDir.SOUTH_EAST, OpAthenaPrint)
+		register("athena_log", "dweaqqqqd", HexDir.SOUTH_EAST, OpAthenaLog)
 		register("atalanta", "aqdea", HexDir.SOUTH_WEST, OpAtalanta)
 		register("castor", "adadee", HexDir.NORTH_WEST, OpCastor)
 		register("pollux", "dadaqq", HexDir.NORTH_EAST, OpPollux)

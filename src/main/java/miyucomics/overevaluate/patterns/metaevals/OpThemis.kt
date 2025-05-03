@@ -25,11 +25,11 @@ object OpThemis : Action {
 
 		if (data.size() == 0) {
 			stack.add(ListIota(listOf()))
-			return OperationResult(image.withResetEscape().copy(stack = stack), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
+			return OperationResult(image.withUsedOp().withResetEscape().copy(stack = stack), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 		}
 
 		return OperationResult(
-			image.withResetEscape().copy(stack = stack),
+			image.withUsedOp().withResetEscape().copy(stack = stack),
 			listOf(),
 			continuation.pushFrame(ThemisFrame(data, code, null, mutableListOf(), mutableListOf())),
 			HexEvalSounds.THOTH
