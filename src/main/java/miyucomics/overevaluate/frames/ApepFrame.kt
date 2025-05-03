@@ -10,6 +10,7 @@ import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.iota.ListIota
+import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.utils.getList
 import at.petrak.hexcasting.api.utils.hasList
 import at.petrak.hexcasting.api.utils.serializeToNBT
@@ -23,7 +24,7 @@ data class ApepFrame(val data: SpellList, val code: SpellList, var acc: Iota, va
 
 	override fun breakDownwards(stack: List<Iota>): Pair<Boolean, List<Iota>> {
 		val newStack = baseStack?.toMutableList() ?: mutableListOf()
-		stack.lastOrNull()?.let { acc = it }
+		acc = stack.lastOrNull() ?: NullIota()
 		newStack.add(acc)
 		return true to newStack
 	}
@@ -32,7 +33,7 @@ data class ApepFrame(val data: SpellList, val code: SpellList, var acc: Iota, va
 		val stack = if (baseStack == null) {
 			vm.image.stack.toList()
 		} else {
-			vm.image.stack.lastOrNull()?.let { acc = it }
+			acc = vm.image.stack.lastOrNull() ?: NullIota()
 			baseStack
 		}
 
