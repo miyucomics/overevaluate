@@ -12,7 +12,7 @@ import miyucomics.overevaluate.handlers.GebSpecialHandler
 import miyucomics.overevaluate.handlers.NephthysSpecialHandler
 import miyucomics.overevaluate.handlers.NutSpecialHandler
 import miyucomics.overevaluate.handlers.SekhmetSpecialHandler
-import miyucomics.overevaluate.patterns.*
+import miyucomics.overevaluate.patterns.OpDioscuriII
 import miyucomics.overevaluate.patterns.metaevals.*
 import miyucomics.overevaluate.patterns.soroban.OpSorobanDecrement
 import miyucomics.overevaluate.patterns.soroban.OpSorobanIncrement
