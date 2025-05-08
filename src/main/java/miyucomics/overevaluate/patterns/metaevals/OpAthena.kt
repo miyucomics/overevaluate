@@ -14,7 +14,7 @@ import miyucomics.overevaluate.frames.AthenaFrame
 object OpAthena : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
 		val stack = image.stack.toMutableList()
-		val instructions = stack.getList(0, 1)
+		val instructions = stack.getList(stack.lastIndex, stack.size)
 		stack.removeLastOrNull()
 
 		return OperationResult(
