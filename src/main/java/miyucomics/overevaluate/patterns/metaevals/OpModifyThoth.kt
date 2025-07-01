@@ -37,7 +37,7 @@ abstract class OpModifyThoth : Action {
 		val newStack = image.stack.toMutableList()
 		newContinuation = newContinuation.pushFrame(updateFrame(forEach, newStack))
 		while (callStack.isNotEmpty())
-			newContinuation = newContinuation.pushFrame(callStack.removeLast())
+			newContinuation = newContinuation.pushFrame(callStack.removeLastOrNull()!!)
 
 		return OperationResult(image.withUsedOp().copy(stack = newStack), listOf(), newContinuation, HexEvalSounds.SPELL)
 	}

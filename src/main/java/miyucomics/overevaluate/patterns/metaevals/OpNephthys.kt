@@ -21,7 +21,7 @@ class OpNephthys(private val depth: Int) : Action {
 			throw MishapNotEnoughArgs(depth + 1, stack.size)
 
 		val instructions = evaluatable(stack[stack.lastIndex], 0).map({ SpellList.LList(0, listOf(it)) }, { it })
-		stack.removeLast()
+		stack.removeLastOrNull()
 		val toRestore = stack.popStack(depth)
 
 		return OperationResult(image.withUsedOp().copy(stack = stack), listOf(),
@@ -36,7 +36,7 @@ class OpNephthys(private val depth: Int) : Action {
 	private fun MutableList<Iota>.popStack(argc: Int): List<Iota> {
 		val stackSize = this.size
 		val args = this.subList(stackSize - argc, stackSize).toList()
-		repeat(argc) { this.removeLast() }
+		repeat(argc) { this.removeLastOrNull() }
 		return args
 	}
 }
