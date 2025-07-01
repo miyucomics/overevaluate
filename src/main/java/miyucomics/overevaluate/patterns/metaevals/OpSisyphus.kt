@@ -16,7 +16,7 @@ object OpSisyphus : Action {
 		if (stack.isEmpty())
 			throw MishapNotEnoughArgs(1, 0)
 		val code = stack.getList(stack.lastIndex)
-		stack.removeLast()
+		stack.removeLastOrNull()
 
 		if (code.nonEmpty) {
 			val frame = SisyphusFrame(code)
