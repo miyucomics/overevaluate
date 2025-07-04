@@ -15,7 +15,7 @@ class OpNut(private val amount: Int) : Action {
 			throw MishapNotEnoughArgs(amount + 1, stack.size)
 		val newStack = stack.toMutableList()
 		val copy = newStack.removeLastOrNull()
-		newStack.add(stack.size - amount - 1, copy)
+		newStack.add(stack.size - amount - 1, copy!!)
 		return OperationResult(image.withUsedOp().copy(stack = newStack), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }
