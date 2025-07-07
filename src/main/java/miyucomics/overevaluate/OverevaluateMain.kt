@@ -5,7 +5,7 @@ import net.minecraft.util.Identifier
 
 class OverevaluateMain : ModInitializer {
 	override fun onInitialize() {
-		OverevaluatePatterns.init()
+		OverevaluateActions.init()
 	}
 
 	companion object {
