@@ -1,4 +1,4 @@
-package miyucomics.overevaluate.patterns.metaevals
+package miyucomics.overevaluate.actions.handlers
 
 import at.petrak.hexcasting.api.casting.SpellList
 import at.petrak.hexcasting.api.casting.castables.Action
@@ -21,10 +21,11 @@ class OpNephthys(private val depth: Int) : Action {
 			throw MishapNotEnoughArgs(depth + 1, stack.size)
 
 		val instructions = evaluatable(stack[stack.lastIndex], 0).map({ SpellList.LList(0, listOf(it)) }, { it })
-		stack.removeLastOrNull()
+		stack.removeLast()
 		val toRestore = stack.popStack(depth)
 
-		return OperationResult(image.withUsedOp().copy(stack = stack), listOf(),
+		return OperationResult(
+			image.withUsedOp().copy(stack = stack), listOf(),
 			continuation
 				.pushFrame(NephthysFrame(toRestore))
 				.pushFrame(FrameFinishEval)
@@ -36,7 +37,7 @@ class OpNephthys(private val depth: Int) : Action {
 	private fun MutableList<Iota>.popStack(argc: Int): List<Iota> {
 		val stackSize = this.size
 		val args = this.subList(stackSize - argc, stackSize).toList()
-		repeat(argc) { this.removeLastOrNull() }
+		repeat(argc) { this.removeLast() }
 		return args
 	}
 }

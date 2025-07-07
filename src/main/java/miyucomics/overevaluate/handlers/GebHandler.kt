@@ -5,14 +5,14 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.api.utils.asTranslatedComponent
 import at.petrak.hexcasting.api.utils.lightPurple
-import miyucomics.overevaluate.patterns.OpGeb
+import miyucomics.overevaluate.actions.handlers.OpGeb
 
-class GebSpecialHandler(private val amount: Int) : SpecialHandler {
+class GebHandler(private val amount: Int) : SpecialHandler {
 	override fun act() = OpGeb(amount)
 	override fun getName() = "special.overevaluate.geb".asTranslatedComponent(amount).lightPurple
 
-	class Factory : SpecialHandler.Factory<GebSpecialHandler> {
-		override fun tryMatch(pattern: HexPattern, env: CastingEnvironment): GebSpecialHandler? {
+	class Factory : SpecialHandler.Factory<GebHandler> {
+		override fun tryMatch(pattern: HexPattern, env: CastingEnvironment): GebHandler? {
 			val sig = pattern.anglesSignature()
 			if (sig.startsWith("aaeaad")) {
 				var amount = 1
@@ -21,7 +21,7 @@ class GebSpecialHandler(private val amount: Int) : SpecialHandler {
 						return null
 					amount += 1
 				}
-				return GebSpecialHandler(amount)
+				return GebHandler(amount)
 			} else {
 				return null
 			}

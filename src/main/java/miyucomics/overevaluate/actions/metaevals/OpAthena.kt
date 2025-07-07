@@ -1,4 +1,4 @@
-package miyucomics.overevaluate.patterns.metaevals
+package miyucomics.overevaluate.actions.metaevals
 
 import at.petrak.hexcasting.api.casting.castables.Action
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
@@ -15,7 +15,7 @@ object OpAthena : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
 		val stack = image.stack.toMutableList()
 		val instructions = stack.getList(stack.lastIndex, stack.size)
-		stack.removeLastOrNull()
+		stack.removeLast()
 
 		return OperationResult(
 			image.withUsedOp().copy(stack = stack),

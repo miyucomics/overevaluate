@@ -1,4 +1,4 @@
-package miyucomics.overevaluate.patterns
+package miyucomics.overevaluate.actions.handlers
 
 import at.petrak.hexcasting.api.casting.castables.Action
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment

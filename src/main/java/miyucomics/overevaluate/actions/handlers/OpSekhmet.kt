@@ -1,17 +1,18 @@
-package miyucomics.overevaluate.patterns.metaevals
+package miyucomics.overevaluate.actions.handlers
 
 import at.petrak.hexcasting.api.casting.castables.Action
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.eval.OperationResult
 import at.petrak.hexcasting.api.casting.eval.vm.CastingImage
 import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation
+import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
-import net.minecraft.text.Text
 
-object OpAthenaPrint : Action {
+class OpSekhmet(private val perserve: Int) : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
-		if (image.userData.contains("last_mishap"))
-			env.printMessage(Text.Serializer.fromJson(image.userData.getString("last_mishap")))
-		return OperationResult(image.withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
+		val stack = image.stack.toMutableList()
+		if (stack.size < perserve)
+			throw MishapNotEnoughArgs(perserve, stack.size)
+		return OperationResult(image.withUsedOp().copy(stack = stack.takeLast(perserve)), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }

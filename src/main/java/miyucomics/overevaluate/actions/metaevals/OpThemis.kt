@@ -1,4 +1,4 @@
-package miyucomics.overevaluate.patterns.metaevals
+package miyucomics.overevaluate.actions.metaevals
 
 import at.petrak.hexcasting.api.casting.SpellList
 import at.petrak.hexcasting.api.casting.castables.Action
@@ -20,8 +20,8 @@ object OpThemis : Action {
 			throw MishapNotEnoughArgs(2, stack.size)
 		val data = stack.getList(stack.lastIndex - 1)
 		val code = evaluatable(stack[stack.lastIndex], 0).map({ SpellList.LList(0, listOf(it)) }, { it })
-		stack.removeLastOrNull()
-		stack.removeLastOrNull()
+		stack.removeLast()
+		stack.removeLast()
 
 		if (data.size() == 0) {
 			stack.add(ListIota(listOf()))

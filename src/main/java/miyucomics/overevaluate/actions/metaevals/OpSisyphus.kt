@@ -1,4 +1,4 @@
-package miyucomics.overevaluate.patterns.metaevals
+package miyucomics.overevaluate.actions.metaevals
 
 import at.petrak.hexcasting.api.casting.castables.Action
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
@@ -16,7 +16,7 @@ object OpSisyphus : Action {
 		if (stack.isEmpty())
 			throw MishapNotEnoughArgs(1, 0)
 		val code = stack.getList(stack.lastIndex)
-		stack.removeLastOrNull()
+		stack.removeLast()
 
 		if (code.nonEmpty) {
 			val frame = SisyphusFrame(code)
