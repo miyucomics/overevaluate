@@ -14,6 +14,7 @@ import miyucomics.overevaluate.handlers.NutHandler
 import miyucomics.overevaluate.handlers.SekhmetHandler
 import miyucomics.overevaluate.actions.OpDioscuriII
 import miyucomics.overevaluate.actions.jumble.OpCreateJumble
+import miyucomics.overevaluate.actions.jumble.OpDissolveJumble
 import miyucomics.overevaluate.actions.metaevals.*
 import miyucomics.overevaluate.actions.soroban.OpSorobanIncrement
 import miyucomics.overevaluate.actions.soroban.OpSorobanReset
@@ -27,6 +28,7 @@ object OverevaluateActions {
 		register("dup_many", "waadadaa", HexDir.EAST, OpDioscuriII)
 
 		register("create_jumble", "deaqd", HexDir.WEST, OpCreateJumble)
+		register("dissolve_jumble", "aedqa", HexDir.SOUTH_WEST, OpDissolveJumble)
 
 		register("soroban_increment", "wdeaqq", HexDir.NORTH_EAST, OpSorobanIncrement)
 		register("soroban_reset", "qdeeaae", HexDir.NORTH_EAST, OpSorobanReset)
