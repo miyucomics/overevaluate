@@ -32,7 +32,7 @@ class JumbleIota(jumble: Jumble) : Iota(TYPE, jumble) {
 		val stack = vm.image.stack.toMutableList()
 		if (stack.size < jumble.args)
 			return CastResult(this, continuation, null, listOf(
-				DoMishap(MishapNotEnoughArgs(jumble.args, stack.size), Mishap.Context(HexPattern(HexDir.WEST, mutableListOf()), null))
+				DoMishap(MishapNotEnoughArgs(jumble.args, stack.size), Mishap.Context(null, null))
 			), ResolvedPatternType.INVALID, HexEvalSounds.MISHAP)
 
 		val reference = stack.takeLast(jumble.args)
@@ -52,14 +52,14 @@ class JumbleIota(jumble: Jumble) : Iota(TYPE, jumble) {
 	}
 }
 
-data class Jumble(val jumble: List<Int>, val args: Int) {
+data class Jumble(val args: Int, val jumble: List<Int>) {
 	fun serialize() = NbtCompound().also {
-		it.putIntArray("jumble", jumble)
 		it.putInt("args", args)
+		it.putIntArray("jumble", jumble)
 	}
 
 	companion object {
-		fun deserialize(compound: NbtCompound) = Jumble(compound.getIntArray("jumble").toList(), compound.getInt("args"))
+		fun deserialize(compound: NbtCompound) = Jumble(compound.getInt("args"), compound.getIntArray("jumble").toList())
 		fun display(compound: NbtCompound): Text {
 			val jumble = deserialize(compound)
 			return Text.literal("${jumble.args} [${jumble.jumble.joinToString(" ")}]").formatted(Formatting.BLUE)
@@ -71,5 +71,5 @@ fun List<Iota>.getJumble(idx: Int, argc: Int = 0): Jumble {
 	val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
 	if (x is JumbleIota)
 		return x.jumble
-	throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "dye")
+	throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "jumble")
 }
