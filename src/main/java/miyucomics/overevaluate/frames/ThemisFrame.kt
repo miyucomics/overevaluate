@@ -40,12 +40,12 @@ data class ThemisFrame(val data: SpellList, val code: SpellList, val baseStack: 
 			vm.image.stack.toList()
 		} else {
 			val top = vm.image.stack.lastOrNull()
-			if (top == null || top !is DoubleIota)
+			if (top !is DoubleIota)
 				return CastResult(
 					ListIota(code),
 					continuation,
 					null,
-					listOf(OperatorSideEffect.DoMishap(ThemisMishap(), Mishap.Context(null, null))),
+					listOf(OperatorSideEffect.DoMishap(ThemisMishap(top), Mishap.Context(null, null))),
 					ResolvedPatternType.ERRORED,
 					HexEvalSounds.MISHAP,
 				)

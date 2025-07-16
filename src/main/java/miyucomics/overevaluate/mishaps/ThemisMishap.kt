@@ -8,8 +8,12 @@ import miyucomics.overevaluate.OverevaluateMain
 import net.minecraft.text.Text
 import net.minecraft.util.DyeColor
 
-class ThemisMishap : Mishap() {
+class ThemisMishap(val received: Iota?) : Mishap() {
 	override fun accentColor(env: CastingEnvironment, errorCtx: Context): FrozenPigment = dyeColor(DyeColor.GREEN)
-	override fun errorMessage(env: CastingEnvironment, errorCtx: Context): Text = error(OverevaluateMain.MOD_ID + ":themis")
+	override fun errorMessage(env: CastingEnvironment, errorCtx: Context): Text {
+		if (received == null)
+			return error(OverevaluateMain.MOD_ID + ":themis_empty")
+		return error(OverevaluateMain.MOD_ID + ":themis", received.display())
+	}
 	override fun execute(env: CastingEnvironment, errorCtx: Context, stack: MutableList<Iota>) {}
 }

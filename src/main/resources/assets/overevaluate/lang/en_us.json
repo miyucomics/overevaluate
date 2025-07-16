@@ -3,7 +3,8 @@
 	"hexcasting.mishap.overevaluate:needs_skippable": "Expected to be run inside of a skippable context.",
 	"hexcasting.mishap.overevaluate:needs_thoth": "Expected to be run inside of Thoth's Gambit.",
 	"hexcasting.mishap.overevaluate:apep": "Expected an iota at the top of the Apep pseudo-stack.",
-	"hexcasting.mishap.overevaluate:themis": "Expected a number at the top of the Themis pseudo-stack.",
+	"hexcasting.mishap.overevaluate:themis": "Expected a number at the top of the Themis pseudo-stack but got %s.",
+	"hexcasting.mishap.overevaluate:themis_empty": "Expected a number at the top of the Themis pseudo-stack but got nothing.",
 
 	"overevaluate.page.extra_stack.title": "Extra Stack Manipulation",
 	"special.overevaluate.sekhmet": "Sekhmet's Gambit: %s",
