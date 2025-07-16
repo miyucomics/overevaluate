@@ -30,10 +30,10 @@
 	"overevaluate.page.soroban.0": "These patterns perform simple integer operations on an imaginary counter called the soroban. They may be useful when $(l:patterns/readwrite#hexcasting:local)Ravenmind$() is occupied or unnecessarily complicated, for example to count iterations in a $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's$() loop.",
 	"hexcasting.action.overevaluate:soroban_increment": "Soroban Reflection",
 	"overevaluate.page.soroban_increment.summary": "Pushes soroban's current value and then increases it. Starts at 0.",
-	"hexcasting.action.overevaluate:soroban_decrement": "Soroban Reflection II",
-	"overevaluate.page.soroban_decrement.summary": "Pushes soroban's current value and then decreases it.",
 	"hexcasting.action.overevaluate:soroban_reset": "Soroban Gambit",
 	"overevaluate.page.soroban_reset.summary": "Resets the soroban to 0.",
+	"hexcasting.action.overevaluate:soroban_set": "Soroban Gambit II",
+	"overevaluate.page.soroban_set.summary": "Pops a number from the stack and sets the soroban to it.",
 
 	"overevaluate.page.metas.title": "Advanced Metaevaluation",
 	"hexcasting.action.overevaluate:athena": "Athena's Gambit",
