@@ -11,10 +11,8 @@ import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
 object OpSorobanIncrement : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
 		val stack = image.stack.toMutableList()
-		val sorobanValue = image.userData.getInt("soroban").toDouble()
-		val newImage = image.withUsedOp().copy(stack = stack)
-		stack.add(DoubleIota(sorobanValue))
-		newImage.userData.putDouble("soroban", sorobanValue + 1)
-		return OperationResult(newImage, listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
+		val soroban = image.userData.getInt("soroban").toDouble()
+		stack.add(DoubleIota(soroban))
+		return OperationResult(image.withUsedOp().copy(stack = stack).also { it.userData.putDouble("soroban", soroban + 1) }, listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }

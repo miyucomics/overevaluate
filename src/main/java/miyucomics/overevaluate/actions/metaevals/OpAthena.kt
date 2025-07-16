@@ -21,9 +21,8 @@ object OpAthena : Action {
 			image.withUsedOp().copy(stack = stack),
 			listOf(),
 			continuation
-				.pushFrame(FrameFinishEval)
 				.pushFrame(AthenaFrame)
-				.pushFrame(FrameEvaluate(instructions, false)),
+				.pushFrame(FrameEvaluate(instructions, true)),
 			HexEvalSounds.HERMES
 		)
 	}
