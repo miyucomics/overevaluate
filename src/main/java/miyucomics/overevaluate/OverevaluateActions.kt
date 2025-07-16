@@ -25,9 +25,9 @@ object OverevaluateActions {
 		register("swap_two_three", "aawede", HexDir.EAST, OpTwiddling(3, intArrayOf(1, 0, 2)))
 		register("dup_many", "waadadaa", HexDir.EAST, OpDioscuriII)
 
-		register("soroban_decrement", "waqdee", HexDir.SOUTH_EAST, OpSorobanSet)
 		register("soroban_increment", "wdeaqq", HexDir.NORTH_EAST, OpSorobanIncrement)
 		register("soroban_reset", "qdeeaae", HexDir.NORTH_EAST, OpSorobanReset)
+		register("soroban_set", "waqdee", HexDir.SOUTH_EAST, OpSorobanSet)
 
 		register("apep", "dqd", HexDir.EAST, OpApep)
 		register("athena", "dweaqqw", HexDir.SOUTH_EAST, OpAthena)

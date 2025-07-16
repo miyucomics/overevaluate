@@ -19,7 +19,7 @@ import net.minecraft.server.world.ServerWorld
 import net.minecraft.text.Text
 
 object AthenaFrame : ContinuationFrame {
-	private val TYPE: ContinuationFrame.Type<AthenaFrame> = object : ContinuationFrame.Type<AthenaFrame> {
+	val TYPE: ContinuationFrame.Type<AthenaFrame> = object : ContinuationFrame.Type<AthenaFrame> {
 		override fun deserializeFromNBT(compound: NbtCompound, world: ServerWorld) = AthenaFrame
 	}
 
@@ -41,7 +41,7 @@ object AthenaFrame : ContinuationFrame {
 	override fun breakDownwards(stack: List<Iota>): Pair<Boolean, List<Iota>> {
 		val oldStack = stack.toMutableList()
 		oldStack.add(BooleanIota(false))
-		return false to oldStack
+		return true to oldStack
 	}
 
 	override fun serializeToNBT() = NbtCompound()
@@ -52,7 +52,7 @@ object AthenaFrame : ContinuationFrame {
 		val original = originalMethod.call(vm, world, continuation)
 		if (original.resolutionType == ResolvedPatternType.EVALUATED)
 			return original
-		val reduced = reduceAthena(continuation) ?: return original
+		val newCont = findResumePoint(continuation) ?: return original
 
 		val stack = vm.image.stack.toMutableList()
 		stack.add(BooleanIota(true))
@@ -62,22 +62,15 @@ object AthenaFrame : ContinuationFrame {
 		if (mishap != null)
 			newImage.userData.putString("last_mishap", Text.Serializer.toJson((mishap as OperatorSideEffect.DoMishap).mishap.errorMessageWithName(vm.env, mishap.errorCtx)))
 
-		return CastResult(pattern, reduced, newImage, listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.NORMAL_EXECUTE)
+		return CastResult(pattern, newCont, newImage, listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.NORMAL_EXECUTE)
 	}
 
-	private fun reduceAthena(continuation: SpellContinuation): SpellContinuation? {
+	private fun findResumePoint(continuation: SpellContinuation): SpellContinuation? {
 		var cont = continuation
 		while (cont is NotDone) {
-			if (cont.frame is AthenaFrame) {
-				cont = cont.next
-				while (cont is NotDone) {
-					if (cont.frame is FrameFinishEval)
-						return cont.next
-					cont = cont.next
-				}
-			}
-
-			cont = (cont as NotDone).next
+			if (cont.frame is AthenaFrame)
+				return cont.next
+			cont = cont.next
 		}
 		return null
 	}
