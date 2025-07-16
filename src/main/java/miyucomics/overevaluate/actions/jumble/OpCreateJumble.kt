@@ -25,6 +25,6 @@ object OpCreateJumble : ConstMediaAction {
 				throw MishapInvalidIota.of(args[0], 1, "jumble_list")
 			rounded
 		}
-		return listOf(JumbleIota(Jumble(jumble, argCount)))
+		return listOf(JumbleIota(Jumble(argCount, jumble)))
 	}
 }
