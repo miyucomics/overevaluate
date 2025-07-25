@@ -19,19 +19,19 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:soroban_decrement",
-			"anchor": "overevaluate:soroban_decrement",
-			"input": "",
-			"output": "number",
-			"text": "overevaluate.page.soroban_decrement.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
 			"op_id": "overevaluate:soroban_reset",
 			"anchor": "overevaluate:soroban_reset",
 			"input": "",
 			"output": "",
 			"text": "overevaluate.page.soroban_reset.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:soroban_set",
+			"anchor": "overevaluate:soroban_set",
+			"input": "number",
+			"output": "",
+			"text": "overevaluate.page.soroban_set.summary"
 		}
 	]
 }
