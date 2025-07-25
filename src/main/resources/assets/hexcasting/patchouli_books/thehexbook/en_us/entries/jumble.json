@@ -1,0 +1,33 @@
+{
+	"name": "overevaluate.page.jumble.title",
+	"icon": "minecraft:mud",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.jumble.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.jumble.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:create_jumble",
+			"anchor": "overevaluate:create_jumble",
+			"input": "number, list",
+			"output": "jumble",
+			"text": "overevaluate.page.create_jumble.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:dissolve_jumble",
+			"anchor": "overevaluate:dissolve_jumble",
+			"input": "jumble",
+			"output": "number, list",
+			"text": "overevaluate.page.dissolve_jumble.summary"
+		}
+	]
+}

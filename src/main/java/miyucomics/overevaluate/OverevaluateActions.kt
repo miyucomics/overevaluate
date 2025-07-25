@@ -13,6 +13,8 @@ import miyucomics.overevaluate.handlers.NephthysHandler
 import miyucomics.overevaluate.handlers.NutHandler
 import miyucomics.overevaluate.handlers.SekhmetHandler
 import miyucomics.overevaluate.actions.OpDioscuriII
+import miyucomics.overevaluate.actions.jumble.OpCreateJumble
+import miyucomics.overevaluate.actions.jumble.OpDissolveJumble
 import miyucomics.overevaluate.actions.metaevals.*
 import miyucomics.overevaluate.actions.soroban.OpSorobanIncrement
 import miyucomics.overevaluate.actions.soroban.OpSorobanReset
@@ -25,9 +27,12 @@ object OverevaluateActions {
 		register("swap_two_three", "aawede", HexDir.EAST, OpTwiddling(3, intArrayOf(1, 0, 2)))
 		register("dup_many", "waadadaa", HexDir.EAST, OpDioscuriII)
 
-		register("soroban_decrement", "waqdee", HexDir.SOUTH_EAST, OpSorobanSet)
+		register("create_jumble", "deaqd", HexDir.WEST, OpCreateJumble)
+		register("dissolve_jumble", "aedqa", HexDir.SOUTH_WEST, OpDissolveJumble)
+
 		register("soroban_increment", "wdeaqq", HexDir.NORTH_EAST, OpSorobanIncrement)
 		register("soroban_reset", "qdeeaae", HexDir.NORTH_EAST, OpSorobanReset)
+		register("soroban_set", "waqdee", HexDir.SOUTH_EAST, OpSorobanSet)
 
 		register("apep", "dqd", HexDir.EAST, OpApep)
 		register("athena", "dweaqqw", HexDir.SOUTH_EAST, OpAthena)
