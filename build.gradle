@@ -18,7 +18,6 @@ repositories {
     maven { url = "https://maven.ladysnake.org/releases" }
     maven { url = "https://maven.shedaniel.me/" }
     maven { url = "https://maven.terraformersmc.com/releases" }
-	mavenLocal()
 }
 
 dependencies {
@@ -27,7 +26,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:$loader_version"
 	modImplementation "net.fabricmc:fabric-language-kotlin:$fabric_kotlin_version"
 
-	modImplementation "miyucomics:hexpose:$hexpose_version"
+	modImplementation "miyucomics.hexpose:hexpose:$hexpose_version"
 	modImplementation("at.petra-k.hexcasting:hexcasting-fabric-$minecraft_version:$hexcasting_version") {
 		exclude module: "phosphor"
 		exclude module: "lithium"
