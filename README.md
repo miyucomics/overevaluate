@@ -1,3 +1,3 @@
 # Overevaluate
 
-An addon that adds patterns for advanced metaevals and stack manipulation to Hexcasting.
+This addon aims to add patterns that allow for more "expressive" Hexcasting programming, such as metaevaluations and stack manipulation patterns. The idea driving this addon is that programming in Hexcasting should be easy and intuitive; it's the spells that should be hard. Why should you need to reference a table of arcane values to shuffle a large number of iotas around? Why not have a pattern that skips to the next item of a Thoth list ( even if it's already possible by wrapping the entire segment in Intro-Retro and using Charon's )?
