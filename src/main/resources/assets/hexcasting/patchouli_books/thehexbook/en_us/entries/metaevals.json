@@ -30,7 +30,7 @@
 			"op_id": "overevaluate:athena_log",
 			"anchor": "overevaluate:athena_log",
 			"input": "",
-			"output": "garbage/string",
+			"output": "garbage/text",
 			"text": "overevaluate.page.athena_log.summary"
 		},
 		{
