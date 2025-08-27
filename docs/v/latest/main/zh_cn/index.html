@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/overevaluate/tree/50f95e2679e75e4a23c8752bc999ade93efad2d9"
+      href="https://github.com/miyucomics/overevaluate/tree/c0fac9edf0058b51b604abb309ec6c08c73ddf23"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -146,13 +146,6 @@
       class="item-texture  texture "
     > 图案</a></summary>
       <ul>
-          <li><a href="#jumble" class="toc-elem "><img
-      title="泥巴"
-      alt="泥巴"
-      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.20.1/1.0.dev1/assets/minecraft/textures/block/mud.png"
-      loading="lazy"
-      class="item-texture  texture "
-    > Jumble Iota</a></li>
           <li><a href="#extra_stack" class="toc-elem "><img
       title="羽毛"
       alt="羽毛"
@@ -160,6 +153,13 @@
       loading="lazy"
       class="item-texture  texture pixelated"
     > 栈操作附加</a></li>
+          <li><a href="#jumble" class="toc-elem "><img
+      title="泥巴"
+      alt="泥巴"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.20.1/1.0.dev1/assets/minecraft/textures/block/mud.png"
+      loading="lazy"
+      class="item-texture  texture "
+    > 理栈 Iota</a></li>
           <li><a href="#soroban" class="toc-elem "><img
       title="算盘"
       alt="算盘"
@@ -196,140 +196,6 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h2>
     <p>我所发现的各式图案，和它们的功用。</p>
-<div id="jumble" class="entry">
-    <h3 class="entry-title page-header">
-    <img
-      title="泥巴"
-      alt="泥巴"
-      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.20.1/1.0.dev1/assets/minecraft/textures/block/mud.png"
-      loading="lazy"
-      class="item-texture  texture "
-    >Jumble Iota<a
-    href="#table-of-contents"
-    class="permalink small"
-    title="Jump to top"
-  ><i class="bi bi-box-arrow-up"></i></a><a
-    href="#jumble"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h3>
-    <p>Jumble iota are a highly versatile and expressive method of stack manipulation; a single jumble iota can copy, remove, and reorder the stack while being highly readable and instantly understandable.</p><p>When a <span style="color: #b38ef3">Hex</span> tries to process a jumble iota, a number of iotas from the stack indicated by the first number in the jumble iota are popped.</p>
-<br />
-    <p>These popped iotas are stored on a temporary list called the reference list. Then, the list of positive integers indicated by the jumble iota are read one by one, indexing into the reference list and pushing the iota to the stack.</p><p>The jumble iota <span style="color: #8d6acc"><i>2 [1 0]</i></span> will pop two iotas off the stack. Then, it will push the iota at index 1 of the reference list, followed by the iota at index 0. In practice, it is identical to <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/stackmanip@hexcasting:swap"><span style="color: #fc77be">Jester&#39;s Gambit</span></a>.</p>
-<br />
-  <div id="jumble@overevaluate:create_jumble" class="">
-<h4 class="pattern-title">Jumbling Gambit (number, list → jumble)<a
-    href="#jumble@overevaluate:create_jumble"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="deaqd"
-        data-start="west"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：deaqd</canvas>
-  </details>
-      <p>Creates a jumble iota corresponding to the argument count and the list of numbers.</p>
-  </div>
-<br />
-  <div id="jumble@overevaluate:dissolve_jumble" class="">
-<h4 class="pattern-title">Jumbling Decomposition (jumble → number, list)<a
-    href="#jumble@overevaluate:dissolve_jumble"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="aedqa"
-        data-start="south_west"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：aedqa</canvas>
-  </details>
-      <p>Dissolves a jumble iota back into a number and a list of numbers.</p>
-  </div>
-<br />
-</div>
 <div id="extra_stack" class="entry">
     <h3 class="entry-title page-header">
     <img
@@ -734,6 +600,140 @@
   </div>
 <br />
 </div>
+<div id="jumble" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="泥巴"
+      alt="泥巴"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.20.1/1.0.dev1/assets/minecraft/textures/block/mud.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >理栈 Iota<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#jumble"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>理栈 iota 能操控栈的结构，它简明易读且用处极多。单个理栈 iota 就可复制、移除、重排栈中元素，同时保持了高度的可读性，且读一遍就能理解。</p><p><span style="color: #b38ef3">咒术</span>在处理理栈 iota 时，会先弹出一定数量的 iota，此数即是理栈 iota 中的第一个数。</p>
+<br />
+    <p>这些弹出的 iota 会进入一个临时列表，称“引用列表”。然后，理栈 iota 会依次读取其第二部分——正整数列表——的各正整数，以之为索引获取引用列表中对应位置的 iota 压入栈中。</p><p>形如 <span style="color: #8d6acc"><i>2 [1 0]</i></span> 的理栈 iota 会弹出两个 iota。然后它会首先将引用列表中索引为 1 的 iota 压栈，再将索引为 0 的 iota 压栈。此理栈 iota 的效果和<a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/stackmanip@hexcasting:swap"><span style="color: #fc77be">弄臣之策略</span></a>一致。</p>
+<br />
+  <div id="jumble@overevaluate:create_jumble" class="">
+<h4 class="pattern-title">理栈之策略 (number, list → jumble)<a
+    href="#jumble@overevaluate:create_jumble"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="deaqd"
+        data-start="west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：deaqd</canvas>
+  </details>
+      <p>使用参数数目和数列表创建理栈 iota。</p>
+  </div>
+<br />
+  <div id="jumble@overevaluate:dissolve_jumble" class="">
+<h4 class="pattern-title">理栈之分解 (jumble → number, list)<a
+    href="#jumble@overevaluate:dissolve_jumble"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aedqa"
+        data-start="south_west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：aedqa</canvas>
+  </details>
+      <p>将理栈 iota 拆回数和数列表。</p>
+  </div>
+<br />
+</div>
 <div id="soroban" class="entry">
     <h3 class="entry-title page-header">
     <img
@@ -866,7 +866,7 @@
   </div>
 <br />
   <div id="soroban@overevaluate:soroban_set" class="">
-<h4 class="pattern-title">Soroban Gambit II (number →)<a
+<h4 class="pattern-title">珠算之策略，第二型 (number →)<a
     href="#soroban@overevaluate:soroban_set"
     class="permalink small"
     title="Permalink"
@@ -918,7 +918,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：waqdee</canvas>
   </details>
-      <p>Pops a number from the stack and sets the soroban to it.</p>
+      <p>移除栈顶数，将珠算计数器设为改数。</p>
   </div>
 <br />
 </div>
@@ -1106,7 +1106,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dweaqqqqd</canvas>
   </details>
-      <p>以<i>文本</i>形式返回<a href="#metaevals@overevaluate:athena"><span style="color: #fc77be">雅典娜之策略</span></a>最后一次捕获到的事故。此法术需要借助<a href="https://modrinth.com/mod/moreiotas" target="_blank"><span style="color: #8d6acc">特殊力量</span></a>，否则就只会产出一团乱麻。</p>
+      <p>如果世界中有对应的特殊力量，则会以<i>文本</i>形式返回<a href="#metaevals@overevaluate:athena"><span style="color: #fc77be">雅典娜之策略</span></a>最后一次捕获到的事故。</p>
   </div>
 <br />
   <div id="metaevals@overevaluate:apep" class="">
