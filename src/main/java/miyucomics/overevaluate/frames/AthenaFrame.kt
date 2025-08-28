@@ -5,13 +5,11 @@ import at.petrak.hexcasting.api.casting.eval.ResolvedPatternType
 import at.petrak.hexcasting.api.casting.eval.sideeffects.OperatorSideEffect
 import at.petrak.hexcasting.api.casting.eval.vm.CastingVM
 import at.petrak.hexcasting.api.casting.eval.vm.ContinuationFrame
-import at.petrak.hexcasting.api.casting.eval.vm.FrameFinishEval
 import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation
 import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation.NotDone
 import at.petrak.hexcasting.api.casting.iota.BooleanIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
-import at.petrak.hexcasting.api.casting.iota.PatternIota
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation
 import net.minecraft.nbt.NbtCompound
@@ -48,7 +46,7 @@ object AthenaFrame : ContinuationFrame {
 	override fun size() = 0
 
 	@JvmStatic
-	fun handleAthena(pattern: PatternIota, vm: CastingVM, world: ServerWorld, continuation: SpellContinuation, originalMethod: Operation<CastResult>): CastResult {
+	fun handleAthena(triggerer: Iota, vm: CastingVM, world: ServerWorld, continuation: SpellContinuation, originalMethod: Operation<CastResult>): CastResult {
 		val original = originalMethod.call(vm, world, continuation)
 		if (original.resolutionType == ResolvedPatternType.EVALUATED)
 			return original
@@ -62,7 +60,7 @@ object AthenaFrame : ContinuationFrame {
 		if (mishap != null)
 			newImage.userData.putString("last_mishap", Text.Serializer.toJson((mishap as OperatorSideEffect.DoMishap).mishap.errorMessageWithName(vm.env, mishap.errorCtx)))
 
-		return CastResult(pattern, newCont, newImage, listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.NORMAL_EXECUTE)
+		return CastResult(triggerer, newCont, newImage, listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.NORMAL_EXECUTE)
 	}
 
 	private fun findResumePoint(continuation: SpellContinuation): SpellContinuation? {
