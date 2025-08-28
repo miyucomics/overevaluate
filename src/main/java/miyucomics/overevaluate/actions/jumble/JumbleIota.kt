@@ -37,7 +37,7 @@ class JumbleIota(jumble: Jumble) : Iota(TYPE, jumble) {
 
 		val reference = stack.takeLast(jumble.args)
 		for (i in 0 until jumble.args)
-			stack.removeLast()
+			stack.removeAt(stack.lastIndex)
 		stack.addAll(jumble.jumble.map { reference[it] })
 
 		return CastResult(this, continuation, vm.image.copy(stack = stack), listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.NORMAL_EXECUTE)

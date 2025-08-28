@@ -15,7 +15,7 @@ object OpSorobanSet : Action {
 		val stack = image.stack.toMutableList()
 		if (stack.isEmpty())
 			throw MishapNotEnoughArgs(1, 0)
-		val new = stack.removeLast()
+		val new = stack.removeAt(stack.lastIndex)
 		if (new !is DoubleIota)
 			throw MishapInvalidIota.ofType(new, 0, "double")
 		return OperationResult(image.withUsedOp().copy(stack = stack).also { it.userData.putDouble("soroban", new.double) }, listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
