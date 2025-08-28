@@ -15,7 +15,7 @@ object OpAthena : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
 		val stack = image.stack.toMutableList()
 		val instructions = stack.getList(stack.lastIndex, stack.size)
-		stack.removeLast()
+		stack.removeAt(stack.lastIndex)
 
 		return OperationResult(
 			image.withUsedOp().copy(stack = stack),

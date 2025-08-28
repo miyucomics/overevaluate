@@ -20,8 +20,8 @@ object OpThemis : Action {
 			throw MishapNotEnoughArgs(2, stack.size)
 		val data = stack.getList(stack.lastIndex - 1)
 		val code = evaluatable(stack[stack.lastIndex], 0).map({ SpellList.LList(0, listOf(it)) }, { it })
-		stack.removeLast()
-		stack.removeLast()
+		stack.removeAt(stack.lastIndex)
+		stack.removeAt(stack.lastIndex)
 
 		if (data.size() == 0) {
 			stack.add(ListIota(listOf()))

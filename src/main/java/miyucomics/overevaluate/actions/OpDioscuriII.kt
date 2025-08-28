@@ -15,7 +15,7 @@ object OpDioscuriII : Action {
 		if (stack.isEmpty())
 			throw MishapNotEnoughArgs(1, 0)
 		val count = stack.takeLast(1).getPositiveIntUnderInclusive(0, stack.size - 1)
-		stack.removeLast()
+		stack.removeAt(stack.lastIndex)
 		for (iota in stack.takeLast(count))
 			stack.add(iota)
 		return OperationResult(image.withUsedOp().copy(stack = stack), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
