@@ -28,7 +28,7 @@ data class SisyphusFrame(val code: SpellList) : ContinuationFrame {
 			continuation
 				.pushFrame(SisyphusFrame(code))
 				.pushFrame(FrameEvaluate(code, true)),
-			vm.image.withResetEscape(),
+			vm.image.withResetEscape().withUsedOp(),
 			listOf(),
 			ResolvedPatternType.EVALUATED,
 			HexEvalSounds.THOTH
