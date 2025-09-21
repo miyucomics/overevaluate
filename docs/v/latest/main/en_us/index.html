@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/overevaluate/tree/9610feb5a15abc45203a49984b0c1ea5b920b527"
+      href="https://github.com/miyucomics/overevaluate/tree/b8c85bb6cd2f87400b2ecc0cd638b54c0ac5d06a"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -1110,7 +1110,7 @@
   </div>
 <br />
   <div id="metaevals@overevaluate:apep" class="">
-<h4 class="pattern-title">Apep&#39;s Gambit (list, [pattern] | pattern → any)<a
+<h4 class="pattern-title">Apep&#39;s Gambit (pattern/list, list → any)<a
     href="#metaevals@overevaluate:apep"
     class="permalink small"
     title="Permalink"
@@ -1162,7 +1162,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: dqd</canvas>
   </details>
-      <p>Folds across the first list using the <span style="color: #b38ef3">Hex</span> in the second list.</p>
+      <p>Folds across the second list using the <span style="color: #b38ef3">Hex</span> or pattern in the first argument.</p>
   </div>
 <br />
     <p>Starts with the first two elements of the list and casts the <span style="color: #b38ef3">Hex</span> on them. Then, the top iota remaining after casting and the next element in the list are placed on the stack and casted upon, repeating until the entire list has been exhausted. The top iota after all that is finally pushed onto the stack.</p><p><i>Euler did music too, you know</i></p>
@@ -1648,7 +1648,7 @@
     <p>While I have heard of self-producing <span style="color: #b38ef3">Hexes</span> called <i>quines</i> used to make infinite loops, they can be slightly unwieldy to work with. This gambit simplifies that process by just repeatedly casting a list until it runs out of evaluations or encounters a <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/meta@hexcasting:halt"><span style="color: #fc77be">Charon&#39;s Gambit</span></a>. The <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/readwrite@hexcasting:local">Ravenmind</a> and stack are carried across iterations.</p><p><i>One always finds one&#39;s burden again... One must imagine Sisyphus happy.</i></p>
 <br />
   <div id="metaevals@overevaluate:themis" class="">
-<h4 class="pattern-title">Themis&#39; Gambit (list, pattern/list → list)<a
+<h4 class="pattern-title">Themis&#39; Gambit (pattern/list, list → list)<a
     href="#metaevals@overevaluate:themis"
     class="permalink small"
     title="Permalink"
@@ -1700,7 +1700,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: dwaad</canvas>
   </details>
-      <p>Takes a list and a pattern or pattern list which is used to sort the list by casting over every iota similar to <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/meta@hexcasting:for_each"><span style="color: #fc77be">Thoth&#39;s Gambit</span></a>.</p>
+      <p>Takes a pattern or pattern list and casts over every element the second list similar to <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/meta@hexcasting:for_each"><span style="color: #fc77be">Thoth&#39;s Gambit</span></a> in order to sort it.</p>
   </div>
 <br />
     <p>After each iteration, it demands a number at the top of the stack which will correspond to that iota. At the end of the gambit, a list is pushed with the iota sorted by that number in increasing order. The order of identically numbered iota are kept. If it encounters <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/meta@hexcasting:halt"><span style="color: #fc77be">Charon&#39;s Gambit</span></a>, it will create a sorted list with only the iota it has come across.</p><p><i>Shuffling is the only thing which Nature cannot undo.</i></p>
