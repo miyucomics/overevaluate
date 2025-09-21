@@ -9,7 +9,7 @@ import miyucomics.overevaluate.actions.handlers.OpNephthys
 
 class NephthysHandler(private val depth: Int) : SpecialHandler {
 	override fun act() = OpNephthys(depth)
-	override fun getName() = "special.overevaluate.nephthys".asTranslatedComponent(depth).lightPurple
+	override fun getName() = "hexcasting.special.overevaluate:nephthys".asTranslatedComponent(depth).lightPurple
 
 	class Factory : SpecialHandler.Factory<NephthysHandler> {
 		override fun tryMatch(pattern: HexPattern, env: CastingEnvironment): NephthysHandler? {

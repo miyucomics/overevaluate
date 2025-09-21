@@ -9,7 +9,7 @@ import miyucomics.overevaluate.actions.handlers.OpSekhmet
 
 class SekhmetHandler(private val perserve: Int) : SpecialHandler {
 	override fun act() = OpSekhmet(perserve)
-	override fun getName() = "special.overevaluate.sekhmet".asTranslatedComponent(perserve).lightPurple
+	override fun getName() = "hexcasting.special.overevaluate:sekhmet".asTranslatedComponent(perserve).lightPurple
 
 	class Factory : SpecialHandler.Factory<SekhmetHandler> {
 		override fun tryMatch(pattern: HexPattern, env: CastingEnvironment): SekhmetHandler? {
