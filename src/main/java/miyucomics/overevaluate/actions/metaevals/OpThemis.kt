@@ -18,8 +18,8 @@ object OpThemis : Action {
 		val stack = image.stack.toMutableList()
 		if (stack.size < 2)
 			throw MishapNotEnoughArgs(2, stack.size)
-		val data = stack.getList(stack.lastIndex - 1)
-		val code = evaluatable(stack[stack.lastIndex], 0).map({ SpellList.LList(0, listOf(it)) }, { it })
+		val code = evaluatable(stack[stack.lastIndex - 1], 1).map({ SpellList.LList(0, listOf(it)) }, { it })
+		val data = stack.getList(stack.lastIndex)
 		stack.removeAt(stack.lastIndex)
 		stack.removeAt(stack.lastIndex)
 
