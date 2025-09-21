@@ -9,7 +9,7 @@ import miyucomics.overevaluate.actions.handlers.OpGeb
 
 class GebHandler(private val amount: Int) : SpecialHandler {
 	override fun act() = OpGeb(amount)
-	override fun getName() = "special.overevaluate.geb".asTranslatedComponent(amount).lightPurple
+	override fun getName() = "hexcasting.special.overevaluate:geb".asTranslatedComponent(amount).lightPurple
 
 	class Factory : SpecialHandler.Factory<GebHandler> {
 		override fun tryMatch(pattern: HexPattern, env: CastingEnvironment): GebHandler? {
