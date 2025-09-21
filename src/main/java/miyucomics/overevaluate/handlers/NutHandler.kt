@@ -9,7 +9,7 @@ import miyucomics.overevaluate.actions.handlers.OpNut
 
 class NutHandler(private val amount: Int) : SpecialHandler {
 	override fun act() = OpNut(amount)
-	override fun getName() = "special.overevaluate.nut".asTranslatedComponent(amount).lightPurple
+	override fun getName() = "hexcasting.special.overevaluate:nut".asTranslatedComponent(amount).lightPurple
 
 	class Factory : SpecialHandler.Factory<NutHandler> {
 		override fun tryMatch(pattern: HexPattern, env: CastingEnvironment): NutHandler? {
