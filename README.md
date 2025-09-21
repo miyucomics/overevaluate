@@ -1,3 +1,5 @@
 # Overevaluate
 
-This addon aims to add patterns that allow for more "expressive" Hexcasting programming, such as metaevaluations and stack manipulation patterns. The idea driving this addon is that programming in Hexcasting should be easy and intuitive; it's the spells that should be hard. Why should you need to reference a table of arcane values to shuffle a large number of iotas around? Why not have a pattern that skips to the next item of a Thoth list ( even if it's already possible by wrapping the entire segment in Intro-Retro and using Charon's )?
+This addon adds patterns for more "expressive" Hexcasting, such as metaevaluations and stack manipulation patterns. The idea is that the programming aspect of Hexcasting should be easy and intuitive; it's the spells that should be hard. Why should you need to reference a table of numbers to shuffle a large number of iotas around? Why not have a pattern that skips to the next item of a Thoth list ( even if it's already possible by wrapping the entire segment in Intro-Retro and using Charon's )?
+
+Spells such as Greater Blink or Rotate Entity from Hexical can—and I argue should—be challenging, but the challenge should be in understanding what the inputs are, how the spell works, and how to construct the inputs, not struggling over the implementation details like loops and `continue`s.
