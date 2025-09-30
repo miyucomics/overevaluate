@@ -10,10 +10,10 @@ import miyucomics.overevaluate.frames.AthenaFrame;
 import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(Iota.class)
-public class IotaMixin {
-	@WrapMethod(method = "execute")
-	private CastResult onMishapCatch(CastingVM vm, ServerWorld world, SpellContinuation continuation, Operation<CastResult> original) {
-		return AthenaFrame.handleAthena((Iota) (Object) this, vm, world, continuation, original);
+@Mixin(CastingVM.class)
+public class CastingVMMixin {
+	@WrapMethod(method = "executeInner")
+	private CastResult onMishapCatch(Iota iota, ServerWorld world, SpellContinuation continuation, Operation<CastResult> original) {
+		return AthenaFrame.handleAthena(iota, (CastingVM) (Object) this, world, continuation, original);
 	}
 }

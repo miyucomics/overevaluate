@@ -46,8 +46,8 @@ object AthenaFrame : ContinuationFrame {
 	override fun size() = 0
 
 	@JvmStatic
-	fun handleAthena(triggerer: Iota, vm: CastingVM, world: ServerWorld, continuation: SpellContinuation, originalMethod: Operation<CastResult>): CastResult {
-		val original = originalMethod.call(vm, world, continuation)
+	fun handleAthena(iota: Iota, vm: CastingVM, world: ServerWorld, continuation: SpellContinuation, originalMethod: Operation<CastResult>): CastResult {
+		val original = originalMethod.call(iota, world, continuation)
 		if (original.resolutionType == ResolvedPatternType.EVALUATED)
 			return original
 		val newCont = findResumePoint(continuation) ?: return original
@@ -60,7 +60,7 @@ object AthenaFrame : ContinuationFrame {
 		if (mishap != null)
 			newImage.userData.putString("last_mishap", Text.Serializer.toJson((mishap as OperatorSideEffect.DoMishap).mishap.errorMessageWithName(vm.env, mishap.errorCtx)))
 
-		return CastResult(triggerer, newCont, newImage, listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.NORMAL_EXECUTE)
+		return CastResult(iota, newCont, newImage, listOf(), ResolvedPatternType.EVALUATED, HexEvalSounds.NORMAL_EXECUTE)
 	}
 
 	private fun findResumePoint(continuation: SpellContinuation): SpellContinuation? {
