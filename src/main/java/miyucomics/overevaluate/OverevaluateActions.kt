@@ -15,6 +15,7 @@ import miyucomics.overevaluate.handlers.SekhmetHandler
 import miyucomics.overevaluate.actions.OpDioscuriII
 import miyucomics.overevaluate.actions.jumble.OpCreateJumble
 import miyucomics.overevaluate.actions.jumble.OpDissolveJumble
+import miyucomics.overevaluate.actions.list_utils.OpSnapList
 import miyucomics.overevaluate.actions.metaevals.*
 import miyucomics.overevaluate.actions.soroban.OpSorobanIncrement
 import miyucomics.overevaluate.actions.soroban.OpSorobanReset
@@ -46,6 +47,8 @@ object OverevaluateActions {
 		register("sisyphus", "qaqwede", HexDir.NORTH_EAST, OpSisyphus)
 		register("themis", "dwaad", HexDir.WEST, OpThemis)
 		register("tutu", "eedqa", HexDir.WEST, OpTutu)
+
+		register("snap_list", "eawdq", HexDir.EAST, OpSnapList)
 
 		registerSpecialHandler("geb", GebHandler.Factory())
 		registerSpecialHandler("nut", NutHandler.Factory())
