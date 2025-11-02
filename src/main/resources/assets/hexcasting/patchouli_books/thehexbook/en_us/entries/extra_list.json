@@ -1,0 +1,25 @@
+{
+	"name": "overevaluate.page.extra_list.title",
+	"icon": "minecraft:bundle",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:rotate_list",
+			"anchor": "overevaluate:rotate_list",
+			"input": "list, number",
+			"output": "list",
+			"text": "overevaluate.page.rotate_list.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:snap_list",
+			"anchor": "overevaluate:snap_list",
+			"input": "list, number",
+			"output": "list, any, list",
+			"text": "overevaluate.page.snap_list.summary"
+		}
+	]
+}
