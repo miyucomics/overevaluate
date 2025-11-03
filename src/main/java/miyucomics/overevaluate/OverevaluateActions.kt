@@ -25,6 +25,9 @@ import net.minecraft.registry.Registry
 
 object OverevaluateActions {
 	fun init() {
+		register("rotate_list", "wwaadaqadae", HexDir.EAST, OpRotateList)
+		register("snap_list", "eawdq", HexDir.EAST, OpSnapList)
+
 		register("swap_one_three", "ddwqaq", HexDir.NORTH_EAST, OpTwiddling(3, intArrayOf(2, 1, 0)))
 		register("swap_two_three", "aawede", HexDir.EAST, OpTwiddling(3, intArrayOf(1, 0, 2)))
 		register("dup_many", "waadadaa", HexDir.EAST, OpDioscuriII)
@@ -48,9 +51,6 @@ object OverevaluateActions {
 		register("sisyphus", "qaqwede", HexDir.NORTH_EAST, OpSisyphus)
 		register("themis", "dwaad", HexDir.WEST, OpThemis)
 		register("tutu", "eedqa", HexDir.WEST, OpTutu)
-
-		register("rotate_list", "wwaadaqadae", HexDir.EAST, OpRotateList)
-		register("snap_list", "eawdq", HexDir.EAST, OpSnapList)
 
 		registerSpecialHandler("geb", GebHandler.Factory())
 		registerSpecialHandler("nut", NutHandler.Factory())
