@@ -14,18 +14,18 @@
 			"text": "overevaluate.page.root.0",
 			"patterns": [
 				{
-					"startdir": "EAST",
-					"signature": "eawe"
+					"startdir": "SOUTH_EAST",
+					"signature": "awe"
 				},
 				{
-					"startdir": "EAST",
-					"signature": "eawew",
+					"startdir": "SOUTH_EAST",
+					"signature": "awew",
 					"q": 1,
 					"r": 2
 				},
 				{
-					"startdir": "EAST",
-					"signature": "eaweww",
+					"startdir": "SOUTH_EAST",
+					"signature": "aweww",
 					"q": 2,
 					"r": 4
 				}

@@ -13,7 +13,7 @@ class RootHandler(private val n: Int) : SpecialHandler {
 
 	class Factory : SpecialHandler.Factory<RootHandler> {
 		override fun tryMatch(pattern: HexPattern, env: CastingEnvironment): RootHandler? {
-			val prefix = "eawe"
+			val prefix = "awe"
 			val sig = pattern.anglesSignature()
 			if (sig.startsWith(prefix)) {
 				val suffix = sig.substring(prefix.length)
