@@ -32,9 +32,9 @@ object OverevaluateActions {
 		register("create_jumble", "deaqd", HexDir.WEST, OpCreateJumble)
 		register("dissolve_jumble", "aedqa", HexDir.SOUTH_WEST, OpDissolveJumble)
 
+		register("soroban_retrieve", "waqdee", HexDir.SOUTH_EAST, OpSorobanRetrieve)
 		register("soroban_push", "wdeaqq", HexDir.NORTH_EAST, OpSorobanPush)
 		register("soroban_pop", "qdeeaae", HexDir.NORTH_EAST, OpSorobanPop)
-		register("soroban_retrieve", "waqdee", HexDir.SOUTH_EAST, OpSorobanRetrieve)
 
 		register("apep", "dqd", HexDir.EAST, OpApep)
 		register("athena", "dweaqqw", HexDir.SOUTH_EAST, OpAthena)

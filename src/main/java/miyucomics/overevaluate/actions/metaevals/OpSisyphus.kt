@@ -18,11 +18,8 @@ object OpSisyphus : Action {
 		val code = stack.getList(stack.lastIndex)
 		stack.removeAt(stack.lastIndex)
 
-		if (code.nonEmpty) {
-			val frame = SisyphusFrame(code)
-			val newImage = image.withUsedOp().copy(stack = stack)
-			return OperationResult(newImage, listOf(), continuation.pushFrame(frame), HexEvalSounds.THOTH)
-		}
+		if (code.nonEmpty)
+			return OperationResult(image.withUsedOp().copy(stack = stack), listOf(), continuation.pushFrame(SisyphusFrame(code)), HexEvalSounds.THOTH)
 
 		return OperationResult(image.withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
