@@ -3,7 +3,7 @@
 	"icon": "hexcasting:abacus",
 	"category": "hexcasting:patterns",
 	"advancement": "hexcasting:root",
-	"sortnum": 0,
+	"sortnum": 12,
 	"pages": [
 		{
 			"type": "hexcasting:manual_pattern",

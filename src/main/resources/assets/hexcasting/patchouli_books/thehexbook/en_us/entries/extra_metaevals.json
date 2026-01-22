@@ -7,46 +7,6 @@
 	"pages": [
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:athena",
-			"anchor": "overevaluate:athena",
-			"input": "list of patterns",
-			"output": "boolean",
-			"text": "overevaluate.page.athena.summary"
-		},
-		{
-			"type": "patchouli:text",
-			"text": "overevaluate.page.athena.description"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:athena_print",
-			"anchor": "overevaluate:athena_print",
-			"input": "",
-			"output": "",
-			"text": "overevaluate.page.athena_print.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:athena_log",
-			"anchor": "overevaluate:athena_log",
-			"input": "",
-			"output": "garbage/text",
-			"text": "overevaluate.page.athena_log.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:apep",
-			"anchor": "overevaluate:apep",
-			"input": "pattern/list, list",
-			"output": "any",
-			"text": "overevaluate.page.apep.summary"
-		},
-		{
-			"type": "patchouli:text",
-			"text": "overevaluate.page.apep.description"
-		},
-		{
-			"type": "hexcasting:pattern",
 			"op_id": "overevaluate:tutu",
 			"anchor": "overevaluate:tutu",
 			"input": "",
@@ -68,18 +28,6 @@
 		{
 			"type": "patchouli:text",
 			"text": "overevaluate.page.janus.description"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:maat",
-			"anchor": "overevaluate:maat",
-			"input": "boolean, any",
-			"output": "",
-			"text": "overevaluate.page.maat.summary"
-		},
-		{
-			"type": "patchouli:text",
-			"text": "overevaluate.page.maat.description"
 		},
 		{
 			"type": "hexcasting:manual_pattern",
@@ -158,18 +106,6 @@
 		{
 			"type": "patchouli:text",
 			"text": "overevaluate.page.sisyphus.description"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:themis",
-			"anchor": "overevaluate:themis",
-			"input": "pattern/list, list",
-			"output": "list",
-			"text": "overevaluate.page.themis.summary"
-		},
-		{
-			"type": "patchouli:text",
-			"text": "overevaluate.page.themis.description"
 		}
 	]
 }

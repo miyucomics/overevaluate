@@ -3,7 +3,7 @@
 	"icon": "minecraft:bundle",
 	"category": "hexcasting:patterns",
 	"advancement": "hexcasting:root",
-	"sortnum": 0,
+	"sortnum": 12,
 	"pages": [
 		{
 			"type": "hexcasting:pattern",
@@ -20,6 +20,30 @@
 			"input": "list, number",
 			"output": "list, any, list",
 			"text": "overevaluate.page.snap_list.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:apep",
+			"anchor": "overevaluate:apep",
+			"input": "pattern/list, list",
+			"output": "any",
+			"text": "overevaluate.page.apep.summary"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.apep.description"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:themis",
+			"anchor": "overevaluate:themis",
+			"input": "pattern/list, list",
+			"output": "list",
+			"text": "overevaluate.page.themis.summary"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.themis.description"
 		}
 	]
 }
