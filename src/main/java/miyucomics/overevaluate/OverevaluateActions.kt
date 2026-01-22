@@ -8,19 +8,16 @@ import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.common.casting.actions.stack.OpTwiddling
 import at.petrak.hexcasting.common.lib.hex.HexActions
 import at.petrak.hexcasting.xplat.IXplatAbstractions
-import miyucomics.overevaluate.handlers.GebHandler
-import miyucomics.overevaluate.handlers.NephthysHandler
-import miyucomics.overevaluate.handlers.NutHandler
-import miyucomics.overevaluate.handlers.SekhmetHandler
 import miyucomics.overevaluate.actions.OpDioscuriII
 import miyucomics.overevaluate.actions.jumble.OpCreateJumble
 import miyucomics.overevaluate.actions.jumble.OpDissolveJumble
 import miyucomics.overevaluate.actions.list_utils.OpRotateList
 import miyucomics.overevaluate.actions.list_utils.OpSnapList
 import miyucomics.overevaluate.actions.metaevals.*
-import miyucomics.overevaluate.actions.soroban.OpSorobanIncrement
-import miyucomics.overevaluate.actions.soroban.OpSorobanReset
-import miyucomics.overevaluate.actions.soroban.OpSorobanSet
+import miyucomics.overevaluate.actions.soroban.OpSorobanPop
+import miyucomics.overevaluate.actions.soroban.OpSorobanPush
+import miyucomics.overevaluate.actions.soroban.OpSorobanRetrieve
+import miyucomics.overevaluate.handlers.*
 import net.minecraft.registry.Registry
 
 object OverevaluateActions {
@@ -35,9 +32,9 @@ object OverevaluateActions {
 		register("create_jumble", "deaqd", HexDir.WEST, OpCreateJumble)
 		register("dissolve_jumble", "aedqa", HexDir.SOUTH_WEST, OpDissolveJumble)
 
-		register("soroban_increment", "wdeaqq", HexDir.NORTH_EAST, OpSorobanIncrement)
-		register("soroban_reset", "qdeeaae", HexDir.NORTH_EAST, OpSorobanReset)
-		register("soroban_set", "waqdee", HexDir.SOUTH_EAST, OpSorobanSet)
+		register("soroban_push", "wdeaqq", HexDir.NORTH_EAST, OpSorobanPush)
+		register("soroban_pop", "qdeeaae", HexDir.NORTH_EAST, OpSorobanPop)
+		register("soroban_retrieve", "waqdee", HexDir.SOUTH_EAST, OpSorobanRetrieve)
 
 		register("apep", "dqd", HexDir.EAST, OpApep)
 		register("athena", "dweaqqw", HexDir.SOUTH_EAST, OpAthena)
@@ -56,6 +53,7 @@ object OverevaluateActions {
 		registerSpecialHandler("nut", NutHandler.Factory())
 		registerSpecialHandler("nephthys", NephthysHandler.Factory())
 		registerSpecialHandler("sekhmet", SekhmetHandler.Factory())
+		registerSpecialHandler("root", RootHandler.Factory())
 	}
 
 	private fun register(name: String, signature: String, startDir: HexDir, action: Action) =

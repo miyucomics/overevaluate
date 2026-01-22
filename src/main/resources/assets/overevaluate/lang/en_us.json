@@ -8,6 +8,18 @@
 	"hexcasting.mishap.invalid_value.jumble_list": "a list of integers such that all integers are under the argument count",
 	"hexcasting.mishap.invalid_value.class.jumble": "a jumble iota",
 
+	"overevaluate.page.extra_list.title": "Extra List Manipulation",
+	"hexcasting.action.overevaluate:rotate_list": "Cycling Distillation",
+	"overevaluate.page.rotate_list.summary": "Moves the first element to the end of the list that many times; negative numbers do the opposite.",
+	"hexcasting.action.overevaluate:snap_list": "Extirpating Gambit",
+	"overevaluate.page.snap_list.summary": "Cuts a list into three parts: what came before the given index, the iota at the given index, and what comes after that iota.",
+
+	"overevaluate.page.extra_math.title": "Extra Mathematical Patterns",
+	"overevaluate.page.extra_math.0": "While math is important for _Hexcasting, that doesn't necessarily mean it has to be $(o)difficult$(). Scattered throughout Nature are various patterns that seemingly exist for the sole purpose of improving my quality of life or improving the expressiveness of my _Hexes.$(br2)I suspect there may be a group of _Hexcasters that scorn the use of such patterns as 'unnecessary.'",
+	"hexcasting.action.overevaluate:root": "Rooting Purification",
+	"hexcasting.special.overevaluate:root": "Rooting Purification: %s",
+	"overevaluate.page.root.0": "Depending on the length of the tail, takes integer roots of numbers. In the example above, the square root, cube root, and fourth root are taken.",
+
 	"overevaluate.page.extra_stack.title": "Extra Stack Manipulation",
 	"hexcasting.action.overevaluate:sekhmet": "Sekhmet's Gambit",
 	"hexcasting.special.overevaluate:sekhmet": "Sekhmet's Gambit: %s",
@@ -25,12 +37,6 @@
 	"overevaluate.page.swap_two_three.summary": "Causes the third-from-the-top iota to bubble up over the second-from-the-top iota, essentially swapping them.",
 	"hexcasting.action.overevaluate:dup_many": "Dioscuri Gambit II",
 	"overevaluate.page.dup_many.summary": "Takes a number and duplicates that many elements of the stack while preserving order.",
-
-	"overevaluate.page.extra_list.title": "Extra List Manipulation",
-	"hexcasting.action.overevaluate:rotate_list": "Cycling Distillation",
-	"overevaluate.page.rotate_list.summary": "Moves the first element to the end of the list that many times; negative numbers do the opposite.",
-	"hexcasting.action.overevaluate:snap_list": "Extirpating Gambit",
-	"overevaluate.page.snap_list.summary": "Cuts a list into three parts: what came before the given index, the iota at the given index, and what comes after that iota.",
 
 	"overevaluate.page.jumble.title": "Jumble Iota",
 	"overevaluate.page.jumble.0": "Jumble iotas are a highly versatile and expressive method of stack manipulation; a single jumble iota can copy, remove, and reorder the stack while being highly readable and instantly understandable.$(br2)When a _Hex tries to process a jumble iota, a number of iotas from the stack indicated by the first number in the jumble iota are popped.",

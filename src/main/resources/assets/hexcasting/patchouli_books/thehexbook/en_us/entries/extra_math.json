@@ -1,0 +1,35 @@
+{
+	"name": "overevaluate.page.extra_math.title",
+	"icon": "hexcasting:abacus",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "hexcasting:manual_pattern",
+			"op_id": "overevaluate:root",
+			"anchor": "overevaluate:root",
+			"input": "number",
+			"output": "number",
+			"text": "overevaluate.page.root.0",
+			"patterns": [
+				{
+					"startdir": "EAST",
+					"signature": "eawe"
+				},
+				{
+					"startdir": "EAST",
+					"signature": "eawew",
+					"q": 1,
+					"r": 2
+				},
+				{
+					"startdir": "EAST",
+					"signature": "eaweww",
+					"q": 2,
+					"r": 4
+				}
+			]
+		}
+	]
+}
