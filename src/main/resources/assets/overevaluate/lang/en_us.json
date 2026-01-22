@@ -54,6 +54,8 @@
 	"hexcasting.action.overevaluate:root": "Rooting Purification",
 	"hexcasting.special.overevaluate:root": "Rooting Purification: %s",
 	"overevaluate.page.root.0": "Depending on the length of the tail, takes integer roots of numbers. In the example above, the square root, cube root, and fourth root are taken.",
+	"hexcasting.action.overevaluate:hadamard": "Hadamard Distillation",
+	"overevaluate.page.hadamard.summary": "Multiplies vectors component by component.",
 
 	"overevaluate.page.metas.title": "Extra Metaevaluation",
 	"hexcasting.action.overevaluate:tutu": "Tutu's Gambit",
