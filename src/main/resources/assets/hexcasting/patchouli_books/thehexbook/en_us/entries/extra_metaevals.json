@@ -38,17 +38,17 @@
 			"text": "overevaluate.page.pluto.summary",
 			"patterns": [
 				{
-					"startdir": "SOUTH_EAST",
+					"startdir": "SOUTH_WEST",
 					"signature": "aqdeea"
 				},
 				{
-					"startdir": "SOUTH_EAST",
+					"startdir": "SOUTH_WEST",
 					"signature": "aqdeeae",
 					"q": 1,
 					"r": 2
 				},
 				{
-					"startdir": "SOUTH_EAST",
+					"startdir": "SOUTH_WEST",
 					"signature": "aqdeeaeq",
 					"q": 2,
 					"r": 4
