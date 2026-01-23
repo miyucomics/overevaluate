@@ -31,6 +31,36 @@
 		},
 		{
 			"type": "hexcasting:manual_pattern",
+			"op_id": "overevaluate:pluto",
+			"anchor": "overevaluate:pluto",
+			"input": "",
+			"output": "",
+			"text": "overevaluate.page.pluto.summary",
+			"patterns": [
+				{
+					"startdir": "SOUTH_EAST",
+					"signature": "aqdeea"
+				},
+				{
+					"startdir": "SOUTH_EAST",
+					"signature": "aqdeeae",
+					"q": 1,
+					"r": 2
+				},
+				{
+					"startdir": "SOUTH_EAST",
+					"signature": "aqdeeaeq",
+					"q": 2,
+					"r": 4
+				}
+			]
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.pluto.description"
+		},
+		{
+			"type": "hexcasting:manual_pattern",
 			"op_id": "overevaluate:nephthys",
 			"anchor": "overevaluate:nephthys",
 			"input": "pattern/list",
