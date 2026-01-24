@@ -42,7 +42,7 @@
 			"op_id": "overevaluate:athena_log",
 			"anchor": "overevaluate:athena_log",
 			"input": "",
-			"output": "garbage/display",
+			"output": "null/garbage/display",
 			"text": "overevaluate.page.athena_log.summary"
 		}
 	]
