@@ -11,27 +11,27 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:soroban_increment",
-			"anchor": "overevaluate:soroban_increment",
+			"op_id": "overevaluate:soroban_retrieve",
+			"anchor": "overevaluate:soroban_retrieve",
 			"input": "",
 			"output": "number",
-			"text": "overevaluate.page.soroban_increment.summary"
+			"text": "overevaluate.page.soroban_retrieve.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:soroban_reset",
-			"anchor": "overevaluate:soroban_reset",
+			"op_id": "overevaluate:soroban_push",
+			"anchor": "overevaluate:soroban_push",
 			"input": "",
 			"output": "",
-			"text": "overevaluate.page.soroban_reset.summary"
+			"text": "overevaluate.page.soroban_push.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "overevaluate:soroban_set",
-			"anchor": "overevaluate:soroban_set",
-			"input": "number",
+			"op_id": "overevaluate:soroban_pop",
+			"anchor": "overevaluate:soroban_pop",
+			"input": "",
 			"output": "",
-			"text": "overevaluate.page.soroban_set.summary"
+			"text": "overevaluate.page.soroban_pop.summary"
 		}
 	]
 }
