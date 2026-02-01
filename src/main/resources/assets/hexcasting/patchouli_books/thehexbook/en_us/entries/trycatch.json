@@ -1,0 +1,49 @@
+{
+	"name": "overevaluate.page.trycatch.title",
+	"icon": "minecraft:leash",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.trycatch.0"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:athena",
+			"anchor": "overevaluate:athena",
+			"input": "list of patterns",
+			"output": "boolean",
+			"text": "overevaluate.page.athena.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:maat",
+			"anchor": "overevaluate:maat",
+			"input": "boolean, any",
+			"output": "",
+			"text": "overevaluate.page.maat.summary"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.maat.description"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:athena_print",
+			"anchor": "overevaluate:athena_print",
+			"input": "",
+			"output": "",
+			"text": "overevaluate.page.athena_print.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:athena_log",
+			"anchor": "overevaluate:athena_log",
+			"input": "",
+			"output": "garbage/display",
+			"text": "overevaluate.page.athena_log.summary"
+		}
+	]
+}

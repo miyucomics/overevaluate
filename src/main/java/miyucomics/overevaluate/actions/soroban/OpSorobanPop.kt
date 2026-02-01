@@ -5,14 +5,16 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.eval.OperationResult
 import at.petrak.hexcasting.api.casting.eval.vm.CastingImage
 import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation
-import at.petrak.hexcasting.api.casting.iota.DoubleIota
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
 
-object OpSorobanIncrement : Action {
+object OpSorobanPop : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
-		val stack = image.stack.toMutableList()
-		val soroban = image.userData.getInt("soroban").toDouble()
-		stack.add(DoubleIota(soroban))
-		return OperationResult(image.withUsedOp().copy(stack = stack).also { it.userData.putDouble("soroban", soroban + 1) }, listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
+		val soroban = (image.userData.getIntArray("soroban") ?: intArrayOf()).toMutableList()
+		if (soroban.isEmpty()) {
+			soroban.add(0)
+		} else {
+			soroban.removeLast()
+		}
+		return OperationResult(image.withUsedOp().also { it.userData.putIntArray("soroban", soroban) }, listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }

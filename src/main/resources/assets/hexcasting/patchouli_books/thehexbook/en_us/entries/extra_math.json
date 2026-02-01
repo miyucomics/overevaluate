@@ -1,0 +1,47 @@
+{
+	"name": "overevaluate.page.extra_math.title",
+	"icon": "hexcasting:abacus",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 12,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "overevaluate.page.extra_math.0"
+		},
+		{
+			"type": "hexcasting:manual_pattern",
+			"op_id": "overevaluate:root",
+			"anchor": "overevaluate:root",
+			"input": "number",
+			"output": "number",
+			"text": "overevaluate.page.root.0",
+			"patterns": [
+				{
+					"startdir": "SOUTH_EAST",
+					"signature": "awe"
+				},
+				{
+					"startdir": "SOUTH_EAST",
+					"signature": "awew",
+					"q": 1,
+					"r": 2
+				},
+				{
+					"startdir": "SOUTH_EAST",
+					"signature": "aweww",
+					"q": 2,
+					"r": 4
+				}
+			]
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:hadamard",
+			"anchor": "overevaluate:hadamard",
+			"input": "vector, vector",
+			"output": "vector",
+			"text": "overevaluate.page.hadamard.summary"
+		}
+	]
+}
