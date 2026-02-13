@@ -45,6 +45,7 @@ object OverevaluateActions {
 
 		register("tutu", "eedqa", HexDir.WEST, OpTutu)
 		register("janus", "aadee", HexDir.SOUTH_WEST, OpJanus)
+		registerSpecialHandler("pluto", PlutoHandler.Factory())
 		registerSpecialHandler("nephthys", NephthysHandler.Factory())
 		register("atalanta", "aqdea", HexDir.SOUTH_WEST, OpAtalanta)
 		register("castor", "adadee", HexDir.NORTH_WEST, OpCastor)
