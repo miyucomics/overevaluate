@@ -48,8 +48,14 @@ object AthenaFrame : ContinuationFrame {
 	@JvmStatic
 	fun handleAthena(iota: Iota, vm: CastingVM, world: ServerWorld, continuation: SpellContinuation, originalMethod: Operation<CastResult>): CastResult {
 		val original = originalMethod.call(iota, world, continuation)
-		if (original.resolutionType == ResolvedPatternType.EVALUATED)
-			return original
+		when (original.resolutionType) {
+			// Explicitly list out all types in case the enum is later expanded
+			ResolvedPatternType.EVALUATED, ResolvedPatternType.ESCAPED, ResolvedPatternType.UNDONE -> {
+				return original
+			}
+
+			ResolvedPatternType.UNRESOLVED, ResolvedPatternType.ERRORED, ResolvedPatternType.INVALID -> {}
+		}
 		val newCont = findResumePoint(continuation) ?: return original
 
 		val stack = vm.image.stack.toMutableList()
