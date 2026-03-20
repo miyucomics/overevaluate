@@ -14,7 +14,7 @@ object OpCreateJumble : ConstMediaAction {
 	override val argc = 2
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val argCount = args.getPositiveInt(0, argc)
-		val jumble = args.getList(1, argc).map { it ->
+		val jumble = args.getList(1, argc).map {
 			if (it !is DoubleIota)
 				throw MishapInvalidIota.of(args[0], 0, "jumble_list")
 			val double = it.double

@@ -3,13 +3,8 @@ package miyucomics.overevaluate
 import at.petrak.hexcasting.api.casting.eval.vm.ContinuationFrame
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes
 import at.petrak.hexcasting.xplat.IXplatAbstractions
-import miyucomics.hexpose.iotas.ItemStackIota
 import miyucomics.overevaluate.actions.jumble.JumbleIota
-import miyucomics.overevaluate.frames.ApepFrame
-import miyucomics.overevaluate.frames.AthenaFrame
-import miyucomics.overevaluate.frames.NephthysFrame
-import miyucomics.overevaluate.frames.SisyphusFrame
-import miyucomics.overevaluate.frames.ThemisFrame
+import miyucomics.overevaluate.frames.*
 import net.fabricmc.api.ModInitializer
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier

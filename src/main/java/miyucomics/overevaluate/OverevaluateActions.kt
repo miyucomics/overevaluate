@@ -15,6 +15,7 @@ import miyucomics.overevaluate.actions.list_utils.OpRotateList
 import miyucomics.overevaluate.actions.list_utils.OpSnapList
 import miyucomics.overevaluate.actions.math.OpHadamard
 import miyucomics.overevaluate.actions.metaevals.*
+import miyucomics.overevaluate.actions.modifiers.OpKeepArguments
 import miyucomics.overevaluate.actions.soroban.OpSorobanPop
 import miyucomics.overevaluate.actions.soroban.OpSorobanPush
 import miyucomics.overevaluate.actions.soroban.OpSorobanRetrieve
@@ -23,6 +24,8 @@ import net.minecraft.registry.Registry
 
 object OverevaluateActions {
 	fun init() {
+		register("below", "ddq", HexDir.NORTH_WEST, OpKeepArguments)
+
 		register("athena", "dweaqqw", HexDir.SOUTH_EAST, OpAthena)
 		register("maat", "qed", HexDir.NORTH_EAST, OpMaat)
 		register("athena_print", "dweaqqqqa", HexDir.SOUTH_EAST, OpAthenaPrint)
@@ -61,13 +64,7 @@ object OverevaluateActions {
 	}
 
 	private fun register(name: String, signature: String, startDir: HexDir, action: Action) =
-		Registry.register(
-			HexActions.REGISTRY, OverevaluateMain.id(name),
-			ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), action)
-		)
+		Registry.register(HexActions.REGISTRY, OverevaluateMain.id(name), ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), action))
 	private fun <T : SpecialHandler> registerSpecialHandler(name: String, handler: SpecialHandler.Factory<T>) =
-		Registry.register(
-			IXplatAbstractions.INSTANCE.specialHandlerRegistry, OverevaluateMain.id(name),
-			handler
-		)
+		Registry.register(IXplatAbstractions.INSTANCE.specialHandlerRegistry, OverevaluateMain.id(name), handler)
 }
