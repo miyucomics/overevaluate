@@ -11,11 +11,11 @@ import net.minecraft.nbt.NbtElement
 object OpKeepArguments : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation) = OperationResult(
 		image.copy(
-			userData = image.userData.copy().apply { putInt("keep_arguments", 2) },
+			userData = image.userData.copy().apply { putInt("pondering", 2) },
 			opsConsumed = image.opsConsumed + 1
 		), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE
 	)
 
 	@JvmStatic
-	fun shouldKeepArguments(image: CastingImage) = image.userData.contains("keep_arguments", NbtElement.INT_TYPE.toInt()) && image.userData.getInt("keep_arguments") == 1
+	fun shouldKeepArguments(image: CastingImage) = image.userData.contains("pondering", NbtElement.INT_TYPE.toInt()) && image.userData.getInt("pondering") == 1
 }

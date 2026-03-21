@@ -26,12 +26,12 @@ public class CastingVMMixin {
 	}
 
 	@Inject(method = "queueExecuteAndWrapIotas", at = @At(value = "INVOKE", target = "Lat/petrak/hexcasting/api/casting/eval/CastingEnvironment;postExecution(Lat/petrak/hexcasting/api/casting/eval/CastResult;)V"))
-	private void decrementBelowness(List<? extends Iota> iotas, ServerWorld world, CallbackInfoReturnable<ExecutionClientView> cir) {
+	private void decrementPondering(List<? extends Iota> iotas, ServerWorld world, CallbackInfoReturnable<ExecutionClientView> cir) {
 		NbtCompound userData = ((CastingVM) (Object) this).getImage().getUserData();
-		if (userData.contains("keep_arguments", NbtElement.INT_TYPE)) {
-			switch (userData.getInt("keep_arguments")) {
-				case 2 -> userData.putInt("keep_arguments", 1);
-				case 1 -> userData.remove("keep_arguments");
+		if (userData.contains("pondering", NbtElement.INT_TYPE)) {
+			switch (userData.getInt("pondering")) {
+				case 2 -> userData.putInt("pondering", 1);
+				case 1 -> userData.remove("pondering");
 			}
 		}
 	}

@@ -25,7 +25,7 @@ import net.minecraft.registry.Registry
 
 object OverevaluateActions {
 	fun init() {
-		register("below", "ddq", HexDir.NORTH_WEST, OpKeepArguments)
+		register("ponder", "ddq", HexDir.NORTH_WEST, OpKeepArguments)
 
 		register("athena", "dweaqqw", HexDir.SOUTH_EAST, OpAthena)
 		register("maat", "qed", HexDir.NORTH_EAST, OpMaat)
