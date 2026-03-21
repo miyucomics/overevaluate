@@ -42,6 +42,14 @@
 			"input": "vector, vector",
 			"output": "vector",
 			"text": "overevaluate.page.hadamard.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "overevaluate:between",
+			"anchor": "overevaluate:between",
+			"input": "num/vec, num/vec, num/vec",
+			"output": "boolean",
+			"text": "overevaluate.page.between.summary"
 		}
 	]
 }

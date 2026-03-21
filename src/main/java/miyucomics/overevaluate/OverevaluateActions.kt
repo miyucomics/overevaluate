@@ -13,6 +13,7 @@ import miyucomics.overevaluate.actions.jumble.OpCreateJumble
 import miyucomics.overevaluate.actions.jumble.OpDissolveJumble
 import miyucomics.overevaluate.actions.list_utils.OpRotateList
 import miyucomics.overevaluate.actions.list_utils.OpSnapList
+import miyucomics.overevaluate.actions.math.OpBetween
 import miyucomics.overevaluate.actions.math.OpHadamard
 import miyucomics.overevaluate.actions.metaevals.*
 import miyucomics.overevaluate.actions.modifiers.OpKeepArguments
@@ -45,6 +46,7 @@ object OverevaluateActions {
 
 		registerSpecialHandler("root", RootHandler.Factory())
 		register("hadamard", "waqaww", HexDir.SOUTH_EAST, OpHadamard)
+		register("between", "wqw", HexDir.EAST, OpBetween)
 
 		register("tutu", "eedqa", HexDir.WEST, OpTutu)
 		register("janus", "aadee", HexDir.SOUTH_WEST, OpJanus)

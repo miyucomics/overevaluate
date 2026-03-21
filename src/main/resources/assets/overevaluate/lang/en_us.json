@@ -5,6 +5,7 @@
 	"hexcasting.mishap.overevaluate:apep": "Expected an iota at the top of the Apep pseudo-stack.",
 	"hexcasting.mishap.overevaluate:themis": "Expected a number at the top of the Themis pseudo-stack but got %s.",
 	"hexcasting.mishap.overevaluate:themis_empty": "Expected a number at the top of the Themis pseudo-stack but got nothing.",
+	"hexcasting.mishap.invalid_value.all_numbers_or_all_vectors": "all arguments to be numbers or all arguments to be vectors",
 	"hexcasting.mishap.invalid_value.jumble_list": "a list of integers such that all integers are under the argument count",
 	"hexcasting.mishap.invalid_value.class.jumble": "a jumble iota",
 
@@ -56,6 +57,8 @@
 	"overevaluate.page.root.0": "Depending on the length of the tail, takes integer roots of numbers. In the example above, the square root, cube root, and fourth root are taken.",
 	"hexcasting.action.overevaluate:hadamard": "Hadamard Distillation",
 	"overevaluate.page.hadamard.summary": "Multiplies vectors component by component.",
+	"hexcasting.action.overevaluate:between": "Bounded Exaltation",
+	"overevaluate.page.between.summary": "Returns whether the first number is within the range formed by following numbers, or whether the first vector is within in the box formed by the following two vectors.",
 
 	"overevaluate.page.metas.title": "Extra Metaevaluation",
 	"hexcasting.action.overevaluate:tutu": "Tutu's Gambit",
